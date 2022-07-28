@@ -39,7 +39,13 @@ public class Test02switch_main2 {
 
 		double avg = total / 3.0;
 		System.out.println("avg: " + avg);
-		String grade = "A";
+		
+		String grade;
+		if (100 >= avg && avg >=90 ) {
+			grade = "A";
+		} else if (70>=avg && avg>80) {
+			grade = "B";
+		}  
 
 		switch ((int) avg) {
 		case 90:
@@ -64,7 +70,7 @@ public class Test02switch_main2 {
 			break;
 
 		default:
-			System.out.println(grade);
+//			System.out.println(grade);
 			break;
 		}
 
