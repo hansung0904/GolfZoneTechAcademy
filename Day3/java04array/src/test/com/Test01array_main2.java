@@ -7,6 +7,7 @@ public class Test01array_main2 {
 
 		// 2. 배열의 정적할당
 		// 배열의 길이를 먼저 정의
+		// 배열을 생성할때 정적으로 할당할건지~ 동적으로 할당할건지 선택을 해야한다~
 
 		int[] sus = new int[5];
 //		sus[0] = 100;
@@ -14,7 +15,7 @@ public class Test01array_main2 {
 //		sus[2] = 10000;
 //		sus[3] = 100000;
 //		sus[4] = 1000000;
-// 		sus[-1] = 1000000; <-- java언어에서 -1번방 같은 배열 문법은 없음. arrayIndexOutofBounds execption 발생
+// 		sus[-1] = 1000000; <-- java언어에서 -1번방 같은 배열 문법은 없음. arrayIndexOutofBounds exception 발생
 
 		for (int i = 0; i < sus.length; i++) {
 			sus[i] = (int) (10 * Math.pow(10, i + 1));
@@ -55,21 +56,29 @@ public class Test01array_main2 {
 		}
 		System.out.println("===============================");
 		// 이름이 3개들어있는 문자열 배열을 생성해보세요~
-		String[] name = new String[3];
+		String[] name = new String[3]; // 기본값인 null, null, null 이 들어가 있다
 		for (int i = 0; i < name.length; i++) {
-			name[i] = "kim"+i;
+			name[i] = "kim" + i;
 		}
 		for (int i = 0; i < name.length; i++) {
 			System.out.println(name[i]);
 		}
 		System.out.println("===============================");
-		
-		//foreach문 활용사례2 - 사용 단점 : 몇 번째것만 꺼내서 출력 불가능.
+
+		// foreach문 활용사례2 - 사용 단점 : 몇 번째것만 꺼내서 출력 불가능.
 		for (String x : name) {
 			System.out.println(x);
 		}
+		System.out.println("===============================");
 		
-		
+		String[][] namess = new String[2][];
+		System.out.println(namess[0]);
+		for (String[] names : namess) {
+			for(String a:names) {
+				System.out.println(a);
+			}
+		}
+
 	} // end main()
 
 } // end class
