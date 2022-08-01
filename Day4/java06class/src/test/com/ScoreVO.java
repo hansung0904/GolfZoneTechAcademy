@@ -7,7 +7,7 @@ public class ScoreVO {
 	private String name;
 	private int kor;
 	private int eng;
-	private int math;
+	private int math; 
 
 	// 매개변수가 없는 생성자. default constructor라고 함(디폴트 생성자)
 	// 생략도 가능하다.
