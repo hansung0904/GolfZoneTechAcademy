@@ -1,30 +1,38 @@
-package test.com;
+package test.kosta;
 
-public class MemberProcess {
+public class MemberDAOex extends MemberDAO {
 
-	public int insert(MemberVO vo) {
+	public MemberDAOex() {
+		System.out.println("MemberDAOex()...");
+		
+	}
+
+	@Override
+	public int insert(MemberVO vo) { // 오버라이딩이 되려면 return type , parameter type , 변수명이 다 같아야한다.
 		System.out.println("intsert()...");
 		System.out.println(vo);
 		return 0;
 	}
-	
+
+	@Override
 	public int update(MemberVO vo) {
 		System.out.println("update()...");
 		System.out.println(vo);
 		return 1;
 	}
 
-	
+	@Override
 	public int delete(MemberVO vo) {
 		System.out.println("delete()...");
 		System.out.println(vo);
 		return 1;
 	}
 
+	@Override
 	public MemberVO[] selectAll() {
-		System.out.println("selectAll()...");
+		System.out.println("MemberVO[] selectAll()...");
 		MemberVO[] vos = new MemberVO[3];
-		
+
 		for (int i = 0; i < vos.length; i++) {
 			MemberVO vo = new MemberVO();
 			vo.setNum(44+i);
@@ -34,13 +42,13 @@ public class MemberProcess {
 			vo.setTel("44"+i);
 			vos[i] = vo;
 		}
-		
 		return vos;
 	}
 
+	@Override
 	public MemberVO selectOne(MemberVO vo) {
 		System.out.println("selectOne()...");
-		System.out.println(vo);
+		System.out.println();
 		
 		MemberVO vo2 = new MemberVO();
 		vo2.setNum(77);
@@ -53,10 +61,11 @@ public class MemberProcess {
 		return vo2;
 	}
 
+	@Override
 	public MemberVO[] searchList(String searchKey, String searchWord) {
 		System.out.println("searchList()...");
-		System.out.println(searchKey);
-		System.out.println(searchWord);
+		System.out.println();
+		System.out.println();
 		
 		MemberVO[] vos = new MemberVO[4];
 		for (int i = 0; i < vos.length; i++) {
