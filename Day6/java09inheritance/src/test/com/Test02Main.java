@@ -1,8 +1,5 @@
 package test.com;
 
-import java.io.InputStreamReader;
-import java.io.Reader;
-
 import test.kosta.AirBus;
 
 public class Test02Main {
