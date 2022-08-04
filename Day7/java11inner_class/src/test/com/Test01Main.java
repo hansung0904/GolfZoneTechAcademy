@@ -44,7 +44,7 @@ public class Test01Main {
 		// 4. anonymous inner --> 일종의 local inner도 될 수 있음.
 		Mother m = new Mother() {
 			double d = Math.PI * 10000;
-			
+
 			@Override
 			public void play() {
 				System.out.println(su);
