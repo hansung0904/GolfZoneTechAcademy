@@ -65,12 +65,13 @@ public class Test03main_Map {
 		vos.add(new MemberVO());
 		vos.add(new MemberVO());
 
+//		m4.put("seoul", vos); 이런식으로 활용 가능.
+//		m4.put("busan", vos);
+
 		m4.put("vos", vos);
 		for (MemberVO x : m4.get("vos")) {
 			System.out.println(x);
 		}
-		
-		
 
 	} // end main
 } // end class
