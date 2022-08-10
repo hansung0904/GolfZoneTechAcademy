@@ -17,7 +17,7 @@ public class MemberMain {
 		result = dao.update(vo);
 		System.out.println("result:" + result); // 1이 나오는지
 
-		vo.setNum(88);
+		vo = new MemberVO();
 		vo.setId("admin99");
 		result = dao.delete(vo);
 		System.out.println("result: " + result); // 1

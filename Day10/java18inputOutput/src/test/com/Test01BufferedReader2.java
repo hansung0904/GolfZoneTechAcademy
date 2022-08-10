@@ -31,7 +31,7 @@ public class Test01BufferedReader2 {
 				StringBuilder sb = new StringBuilder();
 				while ((data = br.readLine()) != null) {
 					System.out.println(data);
-					sb.append(data+"\n");
+					sb.append(data + "\n");
 				}
 				System.out.println(sb.toString());
 			} catch (FileNotFoundException e) {

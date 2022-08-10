@@ -2,6 +2,7 @@ package test.com;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class TestVO implements Serializable { // serializable 직렬화 객체로 쓸 수 있게 해주는것.
 	
 	private int num;
