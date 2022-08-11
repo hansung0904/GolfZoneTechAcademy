@@ -1,0 +1,58 @@
+CREATE sequence seq_member;
+INSERT INTO(num,id,pw,name,tel) VALUES(nextval('seq_memeber')각 타입에 맞게 넣어주면됨 '' 안에다가)
+SELECT * FROM member order by num asc; 아마 오름차순 정렬
+SELECT * FROM member order by num desc; 아마 내림차순 정렬
+update member set id= ''
+
+JAVA 에서의 select one 과 같음..
+postgres=# SELECT * FROM MEMBER WHERE NUM=1;
+ num |   id   |   pw   | name  | tel
+-----+--------+--------+-------+-----
+   1 | tester | hi2222 | lee22 | 022
+(1개 행)
+
+SELECT * FROM MEMBER WHERE NAME='lee2';
+insert into member(num,id,pw,name,tel) values(nextval('seq_member'),'admin1','hi1111','kang','011');
+select * from member where name like '%ki%'; ki가 영타로 있기만 하면 다 검색해줌.
+
+2가들어간 모든걸 보여줌. 검색하고자 하는 문자열 사이에 %% 써주면 됨. JAVA에서 SELECT ONE 할때 사용했음...
+postgres=# select * from member where tel like '%2%';
+ num |   id   |   pw   | name  | tel
+-----+--------+--------+-------+-----
+   1 | tester | hi2222 | lee22 | 022
+(1개 행)
+
+CREATE TABLE member // 멤버테이블 복사용(CLI에)
+
+(
+
+    num integer NOT NULL,
+
+    id character varying(10) NOT NULL,
+
+    pw character varying(10) NOT NULL,
+
+    name character varying(10) NOT NULL,
+
+    tel character varying(10) NOT NULL,
+
+    PRIMARY KEY (num)
+
+);
+
+CREATE TABLE public.board
+(
+    num integer NOT NULL,
+    title character varying(500) NOT NULL,
+    content character varying(4000) DEFAULT '냉무',
+    writer character varying(30) NOT NULL,
+    wdate timestamp with time zone DEFAULT now(),
+    PRIMARY KEY (num)
+);
+
+
+​drop sequence seq_member; // DROP = TABLE 전체 삭제 
+CREATE sequence seq_member; // SEQUENCE 생성 
+update member set id='tester',pw='hi2222',name='lee2', tel='022' where num=1;
+delete from member where num=? // 삭제
+select from member where num=? // 조회

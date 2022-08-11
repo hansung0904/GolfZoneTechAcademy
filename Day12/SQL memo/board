@@ -1,0 +1,53 @@
+INSERT INTO public.board(
+	num, title, content, writer)
+	VALUES (nextval('seq_board'), 'title', 'content', 'kim');
+
+    INSERT INTO board(
+	num, title, content, writer)
+	VALUES (nextval('seq_board'), ?, ?, ?,);
+
+    delete from board where num=2;
+
+    UPDATE public.board
+	SET title='java', content='Hello java', writer='lee', wdate=now()
+	WHERE num=3;
+    select * from board order by num desc;
+    select * from board where title like '%ja%' order by num desc;
+
+    hi 123456
+
+    CREATE DATABASE golfzon
+    WITH
+    OWNER = kosta
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+골프존 db 접속화면
+Server [localhost]:
+Database [postgres]: golfzon
+Port [5432]:
+Username [postgres]: kosta
+kosta 사용자의 암호:
+psql (12.11)
+도움말을 보려면 "help"를 입력하십시오.
+
+golfzon=#
+
+
+CREATE TABLE public.board
+(
+    num integer NOT NULL,
+    title character varying(500) NOT NULL,
+    content character varying(3000) DEFAULT '냉무',
+    writer character varying(500) NOT NULL,
+    wdate timestamp with time zone NOT NULL,
+    PRIMARY KEY (num)
+);
+
+ALTER TABLE IF EXISTS public.board
+    OWNER to kosta;
+
+\conninfo
+
+\c postgres 하면 golfzon 에서 postgres db로 왔다 갔다 할 수 있음 사용자명은 안바뀜..
+
