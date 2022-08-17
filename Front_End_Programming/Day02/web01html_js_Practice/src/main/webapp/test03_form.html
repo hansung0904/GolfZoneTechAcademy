@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Practice</title>
+    <script>
+        var a = 100;
+        console.log(a);
+
+        window.onload = function () {
+            // var btn_idcheck = document.getElementById("btn_idcheck");
+            var btn_idcheck = document.querySelector("#btn_idcheck");
+            console.log(btn_idcheck);
+            btn_idcheck.onclick = function(event) {
+                console.log("onclick...");
+                event.preventDefault();
+                event.stopPropagation();
+
+            };
+        };
+
+    </script>
+
+</head>
+
+<body>
+    <script>
+        var a = 1000;
+        console.log(a);
+
+    </script>
+    <h1>로그인</h1>
+    <form action="#loginOK.do" method="post">
+        <label for="id">ID: </label> <input type="text" placeholder="아이디를 입력해 주세요" id="login_id" name="id"
+            value="admin">
+        <br>
+        <label for="pw">PW: <input type="password" placeholder="비밀번호를 입력해 주세요" id="login_pw" name="pw" value="hi1234">
+            <br>
+            <input type="submit" value="로그인">
+    </form>
+
+    <h1>회원가입</h1>
+    <form action="#insertOK.do" method="post">
+        <label for="id"> ID: <input type="text" placeholder="아이디를 입력해 주세요" id="id" name="id" value="admin">
+            <button id="btn_idcheck">중복체크</button>
+            <br>
+            <label for="pw">PW: <input type="password" placeholder="비밀번호를 입력해 주세요" id="pw" name="pw" value="hi1234">
+                <br>
+                <label for="name">Name: <input type="text" placeholder="이름을 입력해 주세요" id="name" name="name" value="chs">
+                    <br>
+                    <label for="tel">Tel: <input type="tel" placeholder="전화번호를 입력해 주세요" id="tel" name="tel"
+                            value="010-2222-2222">
+                        <br>
+                        <input type="submit" value="회원가입">
+    </form>
+
+    <h1>추가정보</h1>
+    <form action="#InfoAdd.do" method="post" enctype="multipart/form-data">
+        <label for="mf">male: </label> <input type="radio" class="mf" name="mf" value="m" checked>
+        <label for="mf">female: </label> <input type="radio" class="mf" name="mf" value="f">
+        <br>
+        <label for="hobby1">야구: </label> <input type="checkbox" id="hobby1" name="hobby1" value="baseball">
+        <br>
+        <label for="hobby2">농구: </label> <input type="checkbox" id="hobby2" name="hobby2" value="basketball">
+        <br>
+        <label for="30">습득율: </label> <input type="range" id="pct" name="pct" value="0">
+        <br>
+        <label for="birthday">생일: </label> <input type="date" id="birthday" name="birthday" value="1995-09-04">
+        <br>
+        <label for="hidden">NUM:1 </label> <input type="hidden" id="num" name="num" value="1">
+        <br>
+        <label for="file">프로필이미지: </label> <input type="file" id="file" name="file">
+        <br>
+        <input type="submit" value="추가">
+    </form>
+
+    <script>
+        var a = 10000;
+        console.log(a);
+        // var btn_idcheck = document.getElementById("btn_idcheck");
+        // console.log(btn_idcheck);
+    </script>
+
+
+
+</body>
+
+</html>

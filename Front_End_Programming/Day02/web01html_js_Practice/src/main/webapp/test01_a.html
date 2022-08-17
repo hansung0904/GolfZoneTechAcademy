@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<!--Style을 <Script> 보다 먼저 적어주는 이유는 동적인걸 먼저 적어주고 정적인걸 나중에 적어주기 위함인데-->
+	<!-- 마크다운 언어여서-->>
+	<!--CSS는 따로 파일을 만들어서 불러오는 식으로 정리하자-->
+	<!--#은 아이디-->
+	<style>
+		body {
+			background-color: lightblue;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: white;
+			text-align: center;
+		}
+
+		p,
+		pre {
+			font-family: verdana;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		#nav ul {
+			list-style: none;
+			margin: 0;
+			float: right;
+		}
+
+		#nav li {
+			width: 90px;
+			background-color: rgb(94, 227, 250);
+			display: block;
+			float: left;
+			margin-right: 3px;
+			border: 1px solid rgb(57, 137, 184);
+			text-align: center;
+		}
+
+		#nav a {
+			color: #fff;
+			display: block;
+			font-weight: bold;
+			font-size: 14px;
+			padding: 5px;
+			text-decoration: none;
+			text-align: center;
+		}
+
+		ul {
+			font-style: italic;
+			text-align: center;
+			list-style: none;
+		}
+
+		ol {
+			text-align: right;
+			list-style-type: square;
+			list-style-position: inside;
+		}
+		
+		#nav li:hover { 
+			background-color: antiquewhite;
+		}
+
+		.top_menu {
+			background-color: palevioletred;
+		}
+	</style>
+
+	<script>
+		a = 10;
+		console.log(a); // java에서 System.out.println() 메서드랑 비슷 개발자도구 console에서 입력 값 확인
+	</script>
+
+</head>
+
+<!--id 와 class의 차이는 id는 무조건 single로 되어야하고 class는 여러개를 동일한 이름으로 지정해 줄 수 있다.-->
+<!-- css에서 다른 영역에 #~~~가 존재해선 안된다.-->
+<body>
+	<h1 id="top">🛴Test01_A🛴</h1>
+
+	<div id="nav">
+		<ul>
+			<li><a href="test01_next.html">Next html</a><br></li>
+
+			<li><a href="http://www.naver.com">NAVER</a><br></li>
+			<li><a href="#java">JAVA란?</a><br></li>
+			<li><a href="#html">HTML이란?</a></li>
+		</ul>
+	</div>
+
+	<br>
+	<br>
+
+	<ul>
+		<li class="top_menu"><a href="test01_next.html">Go to test01_next html111</a><br><!-- a href 태그는 파일,링크로 이동시켜준다.-->
+		</li>
+		<li class="top_menu"><a href="http://www.naver.com">NAVER111</a><br></li>
+		<li class="top_menu"><a href="#java">JAVA란?111</a><br></li>
+		<li class="top_menu"><a href="#html">HTML이란?111</a></li>
+	</ul>
+
+	<ol>
+		<li><a href="test01_next.html">Go to test01_next html</a><br><!-- a href 태그는 파일,링크로 이동시켜준다.-->
+		</li>
+		<li><a href="http://www.naver.com">NAVER</a><br></li>
+		<li><a href="#java">JAVA란?</a><br></li>
+		<li><a href="#html">HTML이란?</a></li>
+	</ol>
+
+
+	<h3 id="java">👀👀JAVA란?👀👀</h3>
+	<p id="java">✨✨Hello java!!✨✨</p>
+	<p id="hellojava">✨✨Hello java!!✨✨</p>
+	<p id="hellojava">✨✨Hello java!!✨✨</p>
+
+	<hr>
+	<a href="test01_next.html#java">다음페이지...JAVA란??</a><br>
+	<a href="test01_next.html#html">다음페이지...HTML이란?</a>
+
+	<h3 id="html">🎁🎁HTML이란?🎁🎁</h3>
+	<p id="html">🐱‍👤🐱‍👤Hello html!!🐱‍👤🐱‍👤</p>
+	<p>🐱‍👤🐱‍👤Hello html!!🐱‍👤🐱‍👤</p>
+	<p>🐱‍👤🐱‍👤Hello html!!🐱‍👤🐱‍👤</p>
+	<hr>
+	<a href="#top">top</a>
+
+	<pre>			<!--탭 , enter 스페이스바 전부 다 먹혀서 표현해줌-->
+				 Hello java!! 
+				Hello java!!
+				Hello java!!
+			</pre>
+
+
+</body>
+
+</html>

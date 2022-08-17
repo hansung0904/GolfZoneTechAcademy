@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Russo+One&display=swap');
+
+body {
+    margin: 0%;
+    background-color: aliceblue;
+
+    
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+    color: darkgoldenrod;
+    font-family: 'Russo One', sans-serif;
+}
+
+table {
+    margin : auto; /*테이블 가운데 정렬 margin 을 auto로 두자 */
+    font-family: 'DynaPuff', cursive;
+}
+
+table tr th {
+    color: lightcoral;
+    background-color: antiquewhite;
+    text-align: center;
+    font-size: large;
+    width: 200px;
+    height: 15%;
+    
+}
+
+table tr td {
+    /* background-color: aqua; */
+    text-align: center;
+}
+
+tr:nth-child(odd){
+    background-color:blueviolet;
+}
+
+tr:nth-child(even) {
+    background: rgb(211, 211,211);
+}
+
+col:nth-child(even) {
+    background:red;
+}
+
