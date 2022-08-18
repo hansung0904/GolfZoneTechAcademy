@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Hello...");
+
+        var a = 10;
+        var a = 100;
+        
+        let b = 10;
+        // let b = 20; error parsing단계에서 에러 js에선 compile이 아니라 파싱이라고 한다~
+        b = 20; // 값 재할당
+        console.log(b);
+
+        const c = 'aaa'; // 상수이며 반드시 초기화 해줄 것.
+        const c = 'aaa'; // let 처럼 같은 변수 선언 불가.
+        c = 'lee'; // error readonly로 수정불가
+        console.log(c);
+
+
+
+    </script>
+</head>
+<body>
+    <h1>var let const</h1>
+</body>
+</html>
