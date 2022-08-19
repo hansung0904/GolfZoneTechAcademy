@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        console.log("Hello for");
+
+        window.onload = function () {
+            let arr = [11, 22, 33];
+            let txt_tr = "";
+            for (const i in arr) {
+                console.log(arr[i]);
+                txt_tr += "<tr><td>" + arr[i] + "</td></tr>";
+            }
+
+            let tb_arr = document.querySelector("#tb_arr");
+            tb_arr.innerHTML = txt_tr;
+
+            let obj = { name: "kim", age: 33 };
+            let txt_tr2 = "<tr>";
+            for (const key in obj) {
+                console.log(obj[key]); // loop로 접근할때는 []로 접근해야한다.
+                txt_tr2 += "<td>" + obj[key] + "</td>";
+            }
+            txt_tr2 += "</tr>";
+            let tb_obj = document.querySelector("#tb_obj");
+            tb_arr.innerHTML = txt_tr2;
+
+            /////////////////////////////
+            let objs = [
+                { name: "kim1", age: 31 },
+                { name: "kim2", age: 32 },
+                { name: "kim3", age: 33 }
+            ];
+
+            let txt_tr3 = "";
+            
+
+            for (const i in objs) {
+                let obj = objs[i];
+                let row = "<tr>";
+                for(const key in obj) {
+                    row += "<td>" + obj[key] + "</td>";
+
+                }
+                row += "</tr>";
+                txt_tr3 += row;
+            }
+
+
+
+            let tb_objs = document.querySelector("#tb_objs");
+            tb_objs.innerHTML = txt_tr3;
+        };
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <h3>for</h3>
+    <table id="tb_arr"></table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+            </tr>
+        </thead>
+        <tbody id="tb_obj"></tbody>
+            <td>
+
+            </td>
+
+    </table>
+
+
+</body>
+
+</html>

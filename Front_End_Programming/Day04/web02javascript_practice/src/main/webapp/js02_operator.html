@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Operator</title>
+    <script>
+        console.log("Hello operator...");
+        let a = 10;
+        let b = 3;
+        let c = 1;
+
+        // 1. 산술연산자 + - * / % **(제곱)
+        console.log("➕➕산술연산자➕➕");
+        console.log(a + b);
+        console.log(a - b);
+        console.log(a * b);
+        console.log(a / b);
+        console.log(a % b);
+        console.log(a ** b);
+        console.log("=======================");
+
+        // 2. 할당, 대입, 복합할당 = += -= ,,,
+        console.log("❕❕할당연산자❕❕");
+        console.log(a = b);
+        console.log(a += b);
+        console.log(a -= b);
+        console.log("=======================");
+
+
+        // 3. 비트연산 & | ^
+        console.log("💲💲비트연산💲💲");
+        console.log(a & b);
+        console.log(a | b);
+        console.log(a ^ b);
+        console.log("=======================");
+
+        // 4. 비교 == != > < >= <=
+        console.log("✅✅비교✅✅");
+        console.log(a == b); // === 비교가 있다.
+        console.log("kim" == "kim");
+        console.log("kim" === "kim");
+        console.log("=======================");
+        console.log("== 과 ===의 차이점 표시 line"); // 숫자표시 같은경우 == 으로 해도 상관이없으나 문자나 true boolean은 ===으로 해주는 습관을 들이자 js에선...
+        console.log(false == 0); // true
+        console.log(false === 0); // false다 왜? type까지 다 똑같아야 true로 반환해준다.
+        console.log(a != b);
+        console.log(a > b);
+        console.log(a < b);
+        console.log(a >= b);
+        console.log(a <= b);
+        console.log("=======================");
+
+        // 5. 증감연산 ++ -- 
+        console.log("➕➕증감➖➖");
+        console.log(a++);
+        console.log(b--);
+        console.log("=======================");
+
+
+        // 6. 논리연산 && ||
+        console.log("〰〰논리연산〰〰");
+        console.log(true && true); // true
+        console.log(false && true); // false
+        console.log(true || false); // false false 일 때만 거짓이다.
+        console.log(false || true); // false false 일 때만 거짓이다.
+        console.log("" || "kim"); // ""이 오면 kim이라도 반환해라~
+        console.log(undefined || null); // undefined가 와도 null을 할당해라~
+        console.log(false || "kim");
+
+        let name = "yang"; // undefined인 상태
+        let x = name || "lee";
+        console.log("x: " + x);
+
+        console.log("=======================");
+
+        function test(params) {
+            params = params || "0"; // params에 값이 들어가지 않으면 0이라도 출력해
+            console.log("aaa: " + params);
+        }
+        test(111); // 값을 할당해주지 않으면 undefined 출력
+
+        function test2(params) {
+            params = params || [1,2,3];
+            console.log("bbb: " + params[0]);
+        }
+        test2();
+        test2([44,55,66]);
+
+        console.log("=======================");
+
+        // 7. 삼항연산 ? :
+        console.log("👻👻삼항연산👻👻");
+        console.log(true ? "kim" : "lee"); // 참일때 반환값이냐 거짓일때 반환값이냐를 표현
+        console.log(0 ? "kim" : "lee"); // 참일때 반환값이냐 거짓일때 반환값이냐를 표현
+        console.log("=======================");
+
+    </script>
+</head>
+
+<body>
+    <h1>Operator</h1>
+</body>
+
+</html>

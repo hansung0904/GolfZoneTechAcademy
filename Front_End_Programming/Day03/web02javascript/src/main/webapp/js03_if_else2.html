@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+            let avg = 79;
+            let grade = "";
+
+            if (avg >= 90) {
+                grade = "A"
+            } else if (avg >= 80) {
+                grade = "B"
+            } else if (avg >= 70) {
+                grade = "C"
+            } else {
+                grade = "D"
+            }
+            console.log("avg: " + avg);
+            console.log("grade: " + grade);
+
+            let pAvg = document.querySelector("#pAvg"); // selector 는 id에 쓰는거고 selectall은 class에 쓰인다
+            // console.log(pAvg);
+            // pAvg.innerText = "<b>avg<b>: " + avg; TEXT그대로 <b>태그가 출력되어져서 나온다
+            pAvg.innerHTML = "<b>avg<b>: " + avg;
+
+            let pGrade = document.querySelector("#pGrade");
+            pGrade.innerHTML = "<b>grade</b>: " + grade;
+            
+
+        };
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <p id="pAvg">IF~ELSE</p>
+        <p id="pGrade">IF~ELSE</p>
+    </div>
+</body>
+
+</html>

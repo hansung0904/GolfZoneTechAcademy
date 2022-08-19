@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var이라는 변수는 실행로직이 밑에 있어도 변수에 접근이 가능하다
+        console.log("Hello...");
+
+
+        var a = 10; // 동일한 변수가 와도 선언가능
+        console.log(a);
+        var a = 100;
+        console.log(a);
+
+        console.log("kor: " + kor);
+
+        if (true) {
+            console.log("name: " + name2);
+            var kor = 99;
+        }
+
+        var name2 = "kim";
+
+        let b = 10;
+        // let b = 20; error parsing단계에서 에러 js에선 compile이 아니라 파싱이라고 한다~
+        b = 20; // 값 재할당
+        console.log(b);
+
+        if ("kim") {
+            console.log("Hello:" + b);
+            // console.log("eng:" + eng); --> error 
+            let math = 77;
+            console.log("math: " + math);
+
+        }
+        let eng = 88;
+        // console.log("math: " + math);
+
+        // var이 앞에 없기 때문에 if문 밑으로 내려가게되면 undefinded 되어짐 var를 붙여주면 if문 아래로 내려가더라도 값 제대로 나온다
+        // if (true) {
+        //     console.log("x1: " + x);
+        //     // console.log("y: " + y); error
+        // }
+        // y = 1000;
+
+        var x = 10;
+        sleep();
+        function sleep() {
+            x = 10; // x 앞에 var 라고 선언하는순간 method안에 종속되어진다. 전역변수 처럼 쓰고싶으면 var를 지우면 된다.
+            console.log("x2: " + x);
+        }
+        sleep();
+        console.log("x3: " + x);
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1>var let const</h1>
+</body>
+
+</html>

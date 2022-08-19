@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+
+    <script>
+        console.log("Hello Switch Case..");
+
+        window.onload = function () {
+            let avg = 30.7;
+            let grade = "A";
+            console.log(avg / 10);
+            console.log(parseInt(avg / 10));
+
+            let pAvg = document.querySelector("#pAvg"); // selector 는 id에 쓰는거고 selectall은 class에 쓰인다
+            // console.log(pAvg);
+            // pAvg.innerText = "<b>avg<b>: " + avg; TEXT그대로 <b>태그가 출력되어져서 나온다
+            pAvg.innerHTML = "<b>avg</b>: " + avg;
+
+            let pGrade = document.querySelector("#pGrade");
+            pGrade.innerHTML = "<b>grade</b>: " + grade;
+
+            switch (parseInt(avg / 10)) {
+                case 10: case 9:
+                    grade = "A";
+                    break;
+
+                case 8:
+                    grade = "B";
+                    break;
+
+                case 7:
+                    grade = "B";
+                    break;
+                case 6:
+                    grade = "B";
+                    break;
+
+                default:
+                    grade = "F";
+                    break;
+            }
+            console.log("avg: " + avg);
+            console.log("grade: " + grade);
+        }
+
+        
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <p id="pAvg">Switch Case</p>
+        <p id="pGrade">Switch Case</p>
+    </div>
+</body>
+
+</html>

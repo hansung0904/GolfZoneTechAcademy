@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        span:nth-child(odd) {
+            color: red;
+        }
+        h3:nth-child(odd) {
+            color: violet;
+        }
+    </style>
+
+    <script>
+
+        console.log("Hello for");
+
+        window.onload = function () {
+            let txt = "";
+            for (let i = 0; i < 10; i++) {
+                console.log(i);
+                txt += i;
+
+            }
+            console.log(txt)
+            let print0to10 = document.querySelector("#print0to10");
+            print0to10.innerHTML = txt;
+
+            let result = document.querySelector("#result");
+            let txt2 = "";
+
+            for (let i = 0; i < 10; i++) {
+                console.log(i);
+                txt2 += "<h3>" + i + "</h3>";
+                // txt2 += "<span>"+i+"</span>"
+            }
+            result.innerHTML = txt2;
+
+        }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <h3 id="print0to10">for</h3>
+    <div id="result">
+        <h3>0</h3>
+        <h3>1</h3>
+        <h3>2</h3>
+        <h3>3</h3>
+        <h3>4</h3>
+        <h3>5</h3>
+        <h3>6</h3>
+        <h3>7</h3>
+        <h3>8</h3>
+        <h3>9</h3>
+    </div>
+</body>
+
+</html>
