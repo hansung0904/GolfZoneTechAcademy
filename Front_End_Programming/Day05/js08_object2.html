@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Hello Object...");
+
+        // [,,] : array
+        // {key:value, key:value,,,} : object
+
+        let obj = new Object();
+        obj.num = 1;
+        obj.id = "adimin";
+        obj.pw = "hi1234";
+        console.log(obj);
+
+
+
+        // 함수를 이용해서 생성하기
+        function Student(params) {
+            console.log("Student()...");
+        }
+
+
+        let st = new Student();
+        st.numb = 22;
+        st.id = "tester";
+        st.pw = "hi1234";
+        console.log(st);
+
+
+        function Person() {
+            console.log("Person()...");
+            this.num = 33;
+            this.name = "yang";
+            this.age = 28;
+        }
+
+        let p = new Person();
+        console.log(p);
+
+        function Car(x, y) {
+            console.log("Car(x,y)...");
+            this.price = x;
+            this.model = y;
+        }
+
+        let car = new car();
+        console.log(car);
+
+        car = new car(1000, "Audi"); // 1000원짜리 Audi로 객체 생성하겠다~
+        console.log(car);
+
+    </script>
+</head>
+
+<body>
+    <h1>Object</h1>
+</body>
+
+</html>

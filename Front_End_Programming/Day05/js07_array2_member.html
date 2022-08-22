@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test02.css">
+    <script>
+        console.log("Hello array..member");
+
+        //[{num:1,id:"admin1",pw:"hi1111",name:"kim1",tel:"011"},
+        //{num:2,id:"admin2",pw:"hi1112",name:"kim2",tel:"012"},
+        //{num:3,id:"admin3",pw:"hi1113",name:"kim3",tel:"013"},
+        //{num:4,id:"admin4",pw:"hi1114",name:"kim4",tel:"014"}]
+
+        let vos = [{ num: 1, id: "admin1", pw: "hi1111", name: "kim1", tel: "011" },
+        { num: 2, id: "admin2", pw: "hi1112", name: "kim2", tel: "012" },
+        { num: 3, id: "admin3", pw: "hi1113", name: "kim3", tel: "013" },
+        { num: 4, id: "admin4", pw: "hi1114", name: "kim4", tel: "014" }];
+
+        // console.log(vos);
+
+        window.onload = function () {
+            let tb_objs = document.querySelector("#tb_objs");
+            // console.log(tb_objs);
+            
+            let rows = "";
+            for (const i in vos) {
+                let vo = vos[i];
+                // console.log(vo.num,vo.id,vo.pw,vo.name,vo.tel);
+                rows += "<tr>";
+                rows += "<td>"+vo.num+"</td>";
+                rows += "<td>"+vo.id+"</td>";
+                rows += "<td>"+vo.pw+"</td>";
+                rows += "<td>"+vo.name+"</td>";
+                rows += "<td>"+vo.tel+"</td>";
+                rows += "</tr>";
+            }
+
+            tb_objs.innerHTML = rows;
+        };
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <h3>array member</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>NUM</th>
+                <th>ID</th>
+                <th>PW</th>
+                <th>NAME</th>
+                <th>TEL</th>
+            </tr>
+        </thead>
+        <tbody id="tb_objs">
+
+        </tbody>
+    </table>
+</body>
+
+</html>

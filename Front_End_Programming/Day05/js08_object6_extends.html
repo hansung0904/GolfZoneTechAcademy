@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Hello Object...");
+
+        //[,,] : array  >>> new Array(5);
+        //{key:value,key:value,,,} : object >> new Object();
+        //생성자함수 객체
+        //class 선언,
+        //constructor
+        //public & private field
+        //public & private method
+        //get & set method
+        //static
+        //extends-다중상속지원안함.단일상속만 가능.
+
+        class Person{
+            name = "kim";
+            constructor(){
+                console.log("Person()...");
+            }
+            sleep(){
+                console.log("sleep()...");
+            }
+        }
+        let p = new Person();
+        console.log(p);
+
+        console.log("==========");
+
+        class Student extends Person{
+            kor = 99;
+            constructor(){
+                super();
+                console.log("Student()...");
+            }
+
+            study(){
+                console.log("study()...",this.name); 
+            }
+            
+        }//end class
+
+        let st = new Student();
+        console.log(st);
+        st.sleep();
+        st.study();
+        
+        console.log("==========");
+        
+        
+
+
+        class Car{
+            model = "NoModel";
+            constructor(model){
+                console.log("Car()...");
+                this.model = model;
+            }
+
+            start(){
+                console.log("start()...");
+            }
+        }
+
+        let car = new Car("OOOO");
+        console.log(car);
+
+        class Bus extends Car{
+            stationCount = 20;
+            open(){
+                console.log("open()...");
+            }
+        }
+
+        let bus = new Bus("HD");
+        console.log(bus);
+        bus.start();
+        bus.open();
+
+
+    </script>
+</head>
+<body>
+    <h3>Object</h3>
+</body>
+</html>

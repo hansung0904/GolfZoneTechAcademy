@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Hello Object...");
+
+        //[,,] : array  >>> new Array(5);
+        //{key:value,key:value,,,} : object >> new Object();
+        //생성자함수 객체
+        //class 선언,
+        //constructor
+        //public & private field
+        //public & private method
+        //get & set method
+        //static
+
+        class Student{
+            static name = "kim";
+            constructor(){
+                console.log("Student()...");
+            }
+
+            static study(){
+                console.log("static study()..."); 
+            }
+            static #yaja(){
+                console.log("static #yaja()..."); 
+            }
+        }//end class
+
+        Student.name = "lee";
+        console.log(Student.name);//static
+        Student.study();
+        
+        
+        console.log("==========");
+        
+        class Person{
+            static  age = 33;
+            constructor(){
+                console.log("Person()...");
+            }
+            static sleep(){
+                console.log("static sleep()...");
+                let p = new Person();
+                p.#natJam();
+            }
+
+            #natJam(){
+                console.log("#natJam()...");
+            }
+        }
+        console.log(Person.age);
+        Person.sleep();
+
+
+        console.log("==========");
+
+
+        class Car{
+            constructor(){
+                console.log("Car()...");
+            }
+
+            start(){
+                console.log("start()...");
+                Car.turboON();//Car. 생략불가.
+            }
+
+            static turboON(){
+                console.log("static turboON()...");
+            }
+
+        }
+
+        let car = new Car();
+        console.log(car);
+        car.start();
+
+
+    </script>
+</head>
+<body>
+    <h3>Object</h3>
+</body>
+</html>

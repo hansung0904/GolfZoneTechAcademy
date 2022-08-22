@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Hello Object...");
+
+
+        // class 선언 
+        // constructor 
+        // public & private field
+        // public & private method
+        // get & set method
+
+        class Student { // js는 #을 붙여주면 java에서 private처럼 선언 가능
+            #name = "kim";
+            #kor = 99;
+            #eng = 88;
+            #math = 77;
+            constructor() {
+                console.log("Student()...");
+                this.#name = name;
+                this.#kor = kor;
+                this.#eng = eng;
+                this.#math = math;
+
+            }
+
+        }
+
+        let st = new Student("kim", 11, 22, 33);
+
+        class Person {
+            #num = 1;
+            #name = "noName";
+            #age = 33;
+            constructor() {
+                console.log("Person()...");
+                this.#num = num;
+                this.#name = noName;
+                this.#age = age;
+            }
+        }
+
+        let p = new Person(1, "yang", 33);
+        console.log(p);
+
+        class Car {
+            #price = 0;
+            #model = "noModel";
+            #driverName = "noName";
+            constructor() {
+                console.log("Car()...");
+            }
+
+            setPrice(price) {
+                this.#price = price;
+            }
+
+            getPrice() {
+                return this.#price;
+            }
+
+            setModel(model) {
+                this.#model = model;
+            }
+
+            getModel(){
+                return this.#model;
+            }
+
+            setDriverName(drivername) {
+                this.#driverName = drivername;
+            }
+
+            getDriverName(){
+                return this.#driverName;
+            }
+
+        }
+
+        let c = new Car(1, "Audi", "hanseong");
+        c.setPrice(1000);
+        console.log(car.getPrice());
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <h3>Object</h3>
+</body>
+
+</html>

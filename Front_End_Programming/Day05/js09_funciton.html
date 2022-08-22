@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <script>
+        console.log("Hello Function");
+
+        let user = {name:{first:"길동", last:"홍"},address:{street:"GangNam"}};
+        console.log(user.name.address);
+        console.log(user.address); // undefined
+
+        console.log(user.address?.street); // undefined
+        console.log(user.address?.street || "Ori"); // undefined 대체값
+
+
+    </script>
+
+</head>
+<body>
+    <h1>function</h1>
+</body>
+</html>
