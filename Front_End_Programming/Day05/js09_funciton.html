@@ -14,6 +14,12 @@
 
         console.log(user.address?.street); // undefined
         console.log(user.address?.street || "Ori"); // undefined 대체값
+        console.log(user.address?.street ?? "Ori"); // undefined 대체값
+        let street = user.address?.street ?? "Ori";
+        console.log(user.address?.street);
+        street ??= user.address?.street;
+        console.log("=====");
+        
 
 
     </script>

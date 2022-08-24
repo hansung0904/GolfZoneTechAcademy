@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <script>
+        console.log("AJAX...");
+
+        window.onload = function () { // body가 다 읽혀지고난뒤에 실행하세요
+            console.log("onload...");
+            let btn_idCheck = document.querySelector("#btn_idCheck");
+
+            // let result = document.querySelector("#result");
+            // console.log(result);
+
+            btn_idCheck.onclick = function (event) {
+                console.log("onclick...");
+
+                let req = new XMLHttpRequest();
+
+                req.addEventListener("load", function () {
+                    console.log(this.responseText);
+                    let txt_json = this.responseText;
+                    let obj_json = JSON.parse(txt_json);
+                    console.log(obj_json);
+                    console.log(obj_json.result);
+
+                    let txt = "";
+
+                    if (obj_json.result === "Not OK") {
+                        txt = "사용중인 아이디 입니다.";
+                    } else {
+                        txt = "사용가능한 아이디 입니다."
+                    };
+
+                    result.innerHTML = txt;
+
+                });
+
+                req.open("GET", "http://127.0.0.1:5500/js13_json_idCheck.txt?user_id=admin");
+                req.send();
+
+                event.preventDefault();
+                event.stopPropagation();
+            };
+        };
+
+    </script>
+</head>
+
+<body>
+    <h1>AJAX idCheck</h1>
+    <form action="j13_AJAX.html" method="get">
+        <input type="text" id="user_id" name="user_id" value="admin">
+        <input type="button" id="btn_idCheck" value="idCheck">
+        <input type="submit">
+        <span id="result"></span>
+    </form>
+
+
+</body>
+
+</html>

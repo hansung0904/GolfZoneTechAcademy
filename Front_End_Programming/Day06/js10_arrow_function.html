@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+    <script>
+        console.log("Arrow function");
+
+        let arr = [11, 22, 33];
+        arr.forEach(function (item, index) {
+            console.log(item, index);
+        });
+
+        arr.forEach(() => {
+            console.log("aaaaa");
+        });
+
+        arr.forEach((item) => {
+            console.log(item);
+        });
+
+        arr.forEach(item =>
+            console.log(item)
+        );
+
+        arr.forEach((item, index) => console.log(item, index));
+
+        console.log("=============================");
+
+        arr.map(function (item) {
+            console.log(item);
+            return item * 10;
+        })
+
+        arr_map = arr.map((item) => {
+            console.log(item);
+            return item * 100;
+        })
+
+        const names = [
+            'Choi han Seong',
+            'Kim',
+            'Lee',
+            'John'
+        ];
+
+        console.log(names.map(name => name.length));
+
+        let arr_names_length = names.map(name => name.length);
+        console.log(arr_names_length);
+
+        let arr_names_hello = names.map(name => "Hello" + name);
+        console.log(arr_names_hello);
+
+        console.log("=============================");
+
+        arr = [0, 1, 2, 3, 4, 5];
+        let arr_even = arr.filter(item => item % 2 == 0);
+        arr.filter(arr_even);
+
+        let arr_min_names = names.filter(name => name.length < 4);
+        console.log(arr_min_names);
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Arrow Function</h1>
+</body>
+
+</html>

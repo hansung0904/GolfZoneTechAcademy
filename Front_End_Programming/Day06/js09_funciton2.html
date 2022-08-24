@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function2..</title>
+    <script>
+        function run() {
+            console.log("run()...");
+            console.log(arguments);
+            // console.log(arguments.length);
+            // console.log(arguments[0]);
+
+            for (const i in arguments) {
+                console.log(arguments[i]);
+            }
+
+        }
+
+        function stop(x, y) {
+            console.log("stop()....");
+            for (const i in arguments) {
+                console.log(arguments[i]);
+            }
+        }
+
+        stop(44, 55);
+        stop(44, 55, 66, 77);
+
+        function sleep(a, b, c, d) {
+            console.log("sleep()...", a, b, c, d);
+        }
+
+        sleep(11, 22, 33);
+
+        run();
+        run(11);
+        run(11, 22, 33);
+
+    </script>
+
+</head>
+
+<body>
+    <h1>function</h1>
+</body>
+
+</html>

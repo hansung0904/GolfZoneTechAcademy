@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <script>
+        console.log("AJAX...");
+        let req = new XMLHttpRequest();
+
+        req.addEventListener("load", function () {
+            console.log(this.responseText);
+            let txt_json = this.responseText;
+            let obj_json = JSON.parse(txt_json);
+            console.log(obj_json);
+            console.log(obj_json.name,obj_json.age);
+
+            let name = document.querySelector("#name");
+            let age = document.querySelector("#age");
+         
+            name.innerHTML = obj_json.name;
+            age.innerHTML = obj_json.age;
+        }); // eventListener
+        // req.open("GET","http://127.0.0.1:5500/js13.txt");
+        req.open("GET", "http://127.0.0.1:5500/js13_json.txt");
+        req.send();
+    </script>
+</head>
+
+<body>
+    <h1>AJAX</h1>
+    <h3 id="name"></h3>
+    <h3 id="age"></h3>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function2..</title>
+    <script>
+        console.log("Hello function");
+
+        function eat() {
+            console.log("eat()...");
+        }
+
+        eat(11);
+        eat("kim");
+        eat([11, 22, 33]);
+        eat(["kim", 33]);
+        eat(new Array(10));
+        eat({ name: "kim", age: 33 });
+        eat(new Object());
+        function Person() { };
+        let p = new Person();
+        p.user_name = "admin";
+        eat(p);
+
+        class Student { kor = 100 };
+        let st = new Student();
+        eat(st);
+
+
+        eat(function () {
+            console.log("fn()...");
+        });
+
+        eat(() => {
+            console.log("arrow fn()...");
+        });
+
+        function count(){
+            console.log("count()...");
+        }
+        eat(count);
+
+        test(new Board(){
+            @Override
+            public void aaa(){
+                
+            }
+        });
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>function</h1>
+</body>
+
+</html>

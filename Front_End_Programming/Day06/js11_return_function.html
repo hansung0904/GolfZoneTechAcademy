@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Function</title>
+    <script>
+        console.log("Return Function");
+
+        function test() {
+            console.log("test()...");
+            return 11;
+        }
+        // let result = test();
+        // console.log(result);
+
+        function test(x) {
+            console.log("test()...");
+
+            if (!x) return 0;
+            console.log("test11()....");
+            console.log("test11()....");
+            console.log("test11()....");
+            console.log("test11()....");
+            console.log("test11()....");
+            console.log("test11()....");
+            console.log("test11()....");
+            console.log("test11()....");
+            return 11;
+        }
+
+        let result = test(99);
+        console.log(result);
+
+        console.log("=================================");
+
+        function start() {
+            console.log("start()...");
+            // return 11;
+            // return "kim";
+            // return ["kim","kim","kim"];
+            // return {name:"kim",age:33};
+
+            // return function () {
+            //     console.log("fn()...");
+            return (x) => {
+                console.log("fn()...", x);
+            }
+
+        }; // return 값에 함수도 올 수 있다.
+
+
+        let rs = start();
+        console.log(rs); // rs 는 kim을 return 하겠지
+        rs(100);
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Arrow Function</h1>
+</body>
+
+</html>
