@@ -14,7 +14,7 @@
 <div id="nav">
     <ul>
         <li><a href="index.do">index.do</a></li>
-        <li><a href="test.do">test.do</a></li>
+        <li><a href="test.do">delete.do</a></li>
         <li><a href="insert.do">insert.do</a></li>
         <li><a href="selectAll.do">selectAll.do</a></li>
     </ul>
