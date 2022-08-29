@@ -1,15 +1,14 @@
 package com.test.maven;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.XSlf4j;
 
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
-
-
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Locale;
@@ -22,12 +21,12 @@ import java.util.ResourceBundle;
 public class ReadCookieServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        jakarta.servlet.http.Cookie[] cookies = req.getCookies();
+        Cookie[] cookies = req.getCookies();
 
         // req에서는 쿠키 1개만 읽어오는 메소드는 제공하지 x
         // 아래 arrays로 뽑아낸다.
 
-        Cookie cookie = Arrays.stream(cookies).filter(e - > e.getName().equals(e.getName())).findFirst().orElse(null);
+        Cookie cookie = Arrays.stream(cookies).filter(e -> e.getName().equals(e.getName())).findFirst().orElse(null);
 
         if (Objects.isNull(cookie)) {
             resp.sendError(500, "cookie not found");

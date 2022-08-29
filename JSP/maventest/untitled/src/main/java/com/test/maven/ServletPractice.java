@@ -1,11 +1,7 @@
 package com.test.maven;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.IOException;
+import javax.servlet.http.HttpServlet;
 
 /*  sendError method는 porotocol 상의 errormsg를 보낼 수 있다.
  *  ex) 404 , "요청하신 페이지를 찾을 수 없습니다."

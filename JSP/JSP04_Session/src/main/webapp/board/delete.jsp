@@ -11,15 +11,19 @@
     <title>Title</title>
 </head>
 <body>
-<div id="nav">
+<%
+    <div id="nav">
     <ul>
-        <li><a href="index.do">index.do</a></li>
-        <li><a href="delete.do">delete.do</a></li>
-        <li><a href="insert.do">insert.do</a></li>
-        <li><a href="selectAll.do">selectAll.do</a></li>
-        <li><a href="selectList.do">selectAll.do</a></li>
-        <li><a href="selectOne.do">selectAll.do</a></li>
+    <li><a href="index.do">index.do</a></li>
+    <li><a href="delete.do">delete.do</a></li>
+    <li><a href="insert.do">insert.do</a></li>
+    <li><a href="selectAll.do">selectAll.do</a></li>
+    <li><a href="selectList.do">selectList.do</a></li>
+    <li><a href="selectOne.do">selectOne.do</a></li>
+
     </ul>
-</div>
+    </div>
+%>
+
 </body>
 </html>

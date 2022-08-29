@@ -1,14 +1,13 @@
 package com.test.maven;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.XSlf4j;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.OptionalDataException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Optional;
@@ -74,6 +73,8 @@ public class CookieTestServlet extends HttpServlet {
 
     }
 
+
+  
     public static Cookie getCookie(HttpServletRequest req, String name) {
         return Optional.ofNullable(req.getCookies()).flatMap(cookies -> Arrays.stream(cookies)).filter(c -> c.getName().equals(name)).findFirst().orElse();
     }
