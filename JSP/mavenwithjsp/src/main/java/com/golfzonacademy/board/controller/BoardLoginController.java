@@ -9,15 +9,16 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet({"/b_insert.do", "/b_insertOK.do"})
-public class BoardInsertController extends HttpServlet {
+@WebServlet({"/login.do", "/logout.do", "/loginOK.do"})
+public class BoardLoginController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public BoardInsertController() {
+    public BoardLoginController() {
         super();
     }
 
@@ -27,8 +28,16 @@ public class BoardInsertController extends HttpServlet {
         String sPath = request.getServletPath();
         System.out.println("doGet:" + sPath);
 
-        request.getRequestDispatcher("board/insert.jsp").forward(request, response);
+        if (sPath.equals("/login.do")) {
+            request.getRequestDispatcher("board/login.do");
 
+        } else if (sPath.equals("/logout.do")) {
+            request.getRequestDispatcher("board/logout.do");
+            HttpSession session = request.getSession();
+            session.removeAttribute("user_id");
+            response.sendRedirect("home.do");
+        }
+        request.getRequestDispatcher("board/login.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,23 +46,11 @@ public class BoardInsertController extends HttpServlet {
         String sPath = request.getServletPath();
         System.out.println("doPost:" + sPath);
 
-        System.out.println(request.getParameter("title"));
-        System.out.println(request.getParameter("content"));
-        System.out.println(request.getParameter("writer"));
-
-        BoardDAO dao = new BoardDAOimpl();
-
-        BoardVO vo = new BoardVO();
-        vo.setTitle(request.getParameter("title"));
-        vo.setContent(request.getParameter("content"));
-        vo.setWriter(request.getParameter("writer"));
-        int result = dao.insert(vo);
-        System.out.println("result:" + result);
-
-        if (result == 1)
-            response.sendRedirect("b_selectAll.do");
-        else
-            response.sendRedirect("b_insert.do");
+        if (sPath.equals("/loginOK.do")) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user_id", "admin");
+            response.sendRedirect("home.do");
+        }
 
     }// end doPost
 }

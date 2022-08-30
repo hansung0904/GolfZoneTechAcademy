@@ -12,12 +12,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet({"/b_insert.do", "/b_insertOK.do"})
-public class BoardInsertController extends HttpServlet {
+@WebServlet({"/b_delete.do", "/b_deleteOK.do"})
+public class BoardDeleteController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public BoardInsertController() {
+    public BoardDeleteController() {
         super();
     }
 
@@ -27,13 +27,29 @@ public class BoardInsertController extends HttpServlet {
         String sPath = request.getServletPath();
         System.out.println("doGet:" + sPath);
 
-        request.getRequestDispatcher("board/insert.jsp").forward(request, response);
+        if (sPath.equals("/b_delete.do")) {
 
+            request.getRequestDispatcher("board/delete.jsp").forward(request, response);
+        } else if (sPath.equals("/b_deleteOK.do")) {
+            System.out.println(request.getParameter("num"));
+
+            BoardDAO dao = new BoardDAOimpl();
+
+            BoardVO vo = new BoardVO();
+            vo.setNum(Integer.parseInt(request.getParameter("num")));
+
+            int result = dao.delete(vo);
+            if (result == 1) {
+                response.sendRedirect("b_selectAll.do");
+            } else {
+                response.sendRedirect("b_delete.do?num" + request.getParameter("num"));
+            }
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+
         String sPath = request.getServletPath();
         System.out.println("doPost:" + sPath);
 
@@ -47,13 +63,13 @@ public class BoardInsertController extends HttpServlet {
         vo.setTitle(request.getParameter("title"));
         vo.setContent(request.getParameter("content"));
         vo.setWriter(request.getParameter("writer"));
-        int result = dao.insert(vo);
+        int result = dao.delete(vo);
         System.out.println("result:" + result);
 
         if (result == 1)
             response.sendRedirect("b_selectAll.do");
         else
-            response.sendRedirect("b_insert.do");
+            response.sendRedirect("b_delete.do");
 
     }// end doPost
 }

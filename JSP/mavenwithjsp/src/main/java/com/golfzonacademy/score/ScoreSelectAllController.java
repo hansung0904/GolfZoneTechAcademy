@@ -1,9 +1,9 @@
-package com.golfzonacademy.board.controller;
+package com.golfzonacademy.score;
 
 
-import com.golfzonacademy.board.model.BoardDAO;
-import com.golfzonacademy.board.model.BoardDAOimpl;
-import com.golfzonacademy.board.model.BoardVO;
+import com.golfzonacademy.score.model.ScoreDAO;
+import com.golfzonacademy.score.model.ScoreDAOimpl;
+import com.golfzonacademy.score.model.ScoreVO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,12 +13,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet({"/b_selectAll.do"})
-public class BoardSelectAllController extends HttpServlet {
+@WebServlet({"/s_selectAll.do"})
+public class ScoreSelectAllController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public BoardSelectAllController() {
+    public ScoreSelectAllController() {
         super();
     }
 
@@ -26,15 +26,15 @@ public class BoardSelectAllController extends HttpServlet {
         String sPath = request.getServletPath();
         System.out.println("doGet:" + sPath);
 
-        BoardDAO dao = new BoardDAOimpl();
+        ScoreDAO dao = new ScoreDAOimpl();
 
-        List<BoardVO> vos = dao.selectAll();
+        List<ScoreVO> vos = dao.selectAll();
         System.out.println("vos.size():" + vos.size());
 
 
         request.setAttribute("vos", vos);
 
-        request.getRequestDispatcher("board/selectAll.jsp").forward(request, response);
+        request.getRequestDispatcher("score/selectAll.jsp").forward(request, response);
 
     }
 

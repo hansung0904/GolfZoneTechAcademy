@@ -13,12 +13,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet({"/b_selectAll.do"})
-public class BoardSelectAllController extends HttpServlet {
+@WebServlet({"/b_searchList.do"})
+public class BoardSearchListController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public BoardSelectAllController() {
+    public BoardSearchListController() {
         super();
     }
 
@@ -26,15 +26,19 @@ public class BoardSelectAllController extends HttpServlet {
         String sPath = request.getServletPath();
         System.out.println("doGet:" + sPath);
 
+        String searchKey = request.getParameter("searchKey");
+        String searchWord = request.getParameter("searchWord");
+        System.out.println(searchKey);
+        System.out.println(searchWord);
+
         BoardDAO dao = new BoardDAOimpl();
 
-        List<BoardVO> vos = dao.selectAll();
+        List<BoardVO> vos = dao.searchList(searchKey, searchWord);
         System.out.println("vos.size():" + vos.size());
-
 
         request.setAttribute("vos", vos);
 
-        request.getRequestDispatcher("board/selectAll.jsp").forward(request, response);
+        request.getRequestDispatcher("board/searchList.jsp").forward(request, response);
 
     }
 

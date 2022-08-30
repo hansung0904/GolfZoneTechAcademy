@@ -11,35 +11,40 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet({"/b_selectAll.do"})
-public class BoardSelectAllController extends HttpServlet {
+@WebServlet({"/b_selectOne.do"})
+public class BoardSelectOneController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public BoardSelectAllController() {
+    public BoardSelectOneController() {
         super();
     }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String sPath = request.getServletPath();
         System.out.println("doGet:" + sPath);
 
+        System.out.println(request.getParameter("num"));
+
+        BoardVO vo = new BoardVO();
+        vo.setNum(Integer.parseInt(request.getParameter("num")));
+
         BoardDAO dao = new BoardDAOimpl();
 
-        List<BoardVO> vos = dao.selectAll();
-        System.out.println("vos.size():" + vos.size());
+        BoardVO vo2 = dao.selectOne(vo);
+        System.out.println("vos.size():" + vo2);
 
 
-        request.setAttribute("vos", vos);
+        request.setAttribute("vos", vo2);
 
-        request.getRequestDispatcher("board/selectAll.jsp").forward(request, response);
+        request.getRequestDispatcher("board/selectOne.jsp").forward(request, response);
 
     }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }//end doPost
-
 }

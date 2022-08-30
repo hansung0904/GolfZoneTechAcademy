@@ -1,9 +1,9 @@
-package com.golfzonacademy.board.controller;
+package com.golfzonacademy.score;
 
 
-import com.golfzonacademy.board.model.BoardDAO;
-import com.golfzonacademy.board.model.BoardDAOimpl;
-import com.golfzonacademy.board.model.BoardVO;
+import com.golfzonacademy.score.model.ScoreDAO;
+import com.golfzonacademy.score.model.ScoreDAOimpl;
+import com.golfzonacademy.score.model.ScoreVO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,12 +12,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet({"/b_insert.do", "/b_insertOK.do"})
-public class BoardInsertController extends HttpServlet {
+@WebServlet({"/s_insert.do", "/s_insertOK.do"})
+public class ScoreInsertController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public BoardInsertController() {
+    public ScoreInsertController() {
         super();
     }
 
@@ -27,7 +27,7 @@ public class BoardInsertController extends HttpServlet {
         String sPath = request.getServletPath();
         System.out.println("doGet:" + sPath);
 
-        request.getRequestDispatcher("board/insert.jsp").forward(request, response);
+        request.getRequestDispatcher("score/insert.jsp").forward(request, response);
 
     }
 
@@ -37,23 +37,23 @@ public class BoardInsertController extends HttpServlet {
         String sPath = request.getServletPath();
         System.out.println("doPost:" + sPath);
 
-        System.out.println(request.getParameter("title"));
-        System.out.println(request.getParameter("content"));
-        System.out.println(request.getParameter("writer"));
+        System.out.println(request.getParameter("kor"));
+        System.out.println(request.getParameter("eng"));
+        System.out.println(request.getParameter("math"));
 
-        BoardDAO dao = new BoardDAOimpl();
+        ScoreDAO dao = new ScoreDAOimpl();
 
-        BoardVO vo = new BoardVO();
-        vo.setTitle(request.getParameter("title"));
-        vo.setContent(request.getParameter("content"));
-        vo.setWriter(request.getParameter("writer"));
+        ScoreVO vo = new ScoreVO();
+        vo.setKor(Integer.parseInt(request.getParameter("33")));
+        vo.setEng(Integer.parseInt(request.getParameter("77")));
+        vo.setMath(Integer.parseInt(request.getParameter("88")));
         int result = dao.insert(vo);
         System.out.println("result:" + result);
 
         if (result == 1)
-            response.sendRedirect("b_selectAll.do");
+            response.sendRedirect("s_selectAll.do");
         else
-            response.sendRedirect("b_insert.do");
+            response.sendRedirect("s_insert.do");
 
     }// end doPost
 }

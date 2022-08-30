@@ -12,12 +12,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet({"/b_insert.do", "/b_insertOK.do"})
-public class BoardInsertController extends HttpServlet {
+@WebServlet({"/b_update.do", "/b_updateOK.do"})
+public class BoardUpdateController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public BoardInsertController() {
+    public BoardUpdateController() {
         super();
     }
 
@@ -27,7 +27,20 @@ public class BoardInsertController extends HttpServlet {
         String sPath = request.getServletPath();
         System.out.println("doGet:" + sPath);
 
-        request.getRequestDispatcher("board/insert.jsp").forward(request, response);
+        request.getRequestDispatcher("board/update.jsp").forward(request, response);
+
+        System.out.println(request.getParameter("num"));
+
+        BoardVO vo = new BoardVO();
+        vo.setNum(Integer.parseInt(request.getParameter("num")));
+
+        BoardDAO dao = new BoardDAOimpl();
+
+        BoardVO vo2 = dao.selectOne(vo);
+        System.out.println("vos.size():" + vo2);
+
+
+        request.setAttribute("vos", vo2);
 
     }
 
@@ -44,16 +57,17 @@ public class BoardInsertController extends HttpServlet {
         BoardDAO dao = new BoardDAOimpl();
 
         BoardVO vo = new BoardVO();
+        System.out.println(Integer.parseInt(request.getParameter("num")));
         vo.setTitle(request.getParameter("title"));
         vo.setContent(request.getParameter("content"));
         vo.setWriter(request.getParameter("writer"));
-        int result = dao.insert(vo);
+        int result = dao.update(vo);
         System.out.println("result:" + result);
 
         if (result == 1)
-            response.sendRedirect("b_selectAll.do");
+            response.sendRedirect("b_selectOne.do?num=" + request.getParameter("num"));
         else
-            response.sendRedirect("b_insert.do");
+            response.sendRedirect("b_update.do?num=" + request.getParameter("num"));
 
     }// end doPost
 }
