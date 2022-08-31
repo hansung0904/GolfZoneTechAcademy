@@ -12,6 +12,6 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/../../../백준 문제풀이용/Algorithm/out" />
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

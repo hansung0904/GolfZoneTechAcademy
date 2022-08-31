@@ -4,11 +4,11 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspWriter;
-import java.util.List;
 
 /*
  * pageContext 내장 객체 (JspContext API)
- * */
+ *
+ */
 public abstract class PracticeSession {
 
     abstract public Object getAttribute(String name, int scope);

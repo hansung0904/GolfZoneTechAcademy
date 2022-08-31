@@ -1,6 +1,5 @@
 package com.golfzonacademy.board.controller;
 
-
 import com.golfzonacademy.board.model.BoardDAO;
 import com.golfzonacademy.board.model.BoardDAOimpl;
 import com.golfzonacademy.board.model.BoardVO;
@@ -30,7 +29,6 @@ public class BoardSelectAllController extends HttpServlet {
 
         List<BoardVO> vos = dao.selectAll();
         System.out.println("vos.size():" + vos.size());
-
 
         request.setAttribute("vos", vos);
 

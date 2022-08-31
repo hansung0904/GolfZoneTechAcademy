@@ -1,9 +1,6 @@
 package com.golfzonacademy.board.controller;
 
 
-import com.golfzonacademy.board.model.BoardDAO;
-import com.golfzonacademy.board.model.BoardDAOimpl;
-import com.golfzonacademy.board.model.BoardVO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
