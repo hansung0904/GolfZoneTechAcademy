@@ -1,10 +1,10 @@
--- ¸ðµç »ç¿øÀÇ Á¤º¸ Ãâ·Â
+-- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 SELECT
     *
 FROM
     employees;
 
--- ¸ðµç »ç¿øÀÇ Á¤º¸ Áß ¾÷¹«¾ÆÀÌµð¸¸ Ãâ·Â (¿À¸§Â÷¼ø)
+-- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 SELECT
     job_id
 FROM
@@ -12,7 +12,7 @@ FROM
 ORDER BY
     job_id ASC;
 
--- DISTINCT´Â Áßº¹Á¦°Å
+-- DISTINCTï¿½ï¿½ ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½
 SELECT DISTINCT
     job_id
 FROM
@@ -20,7 +20,7 @@ FROM
 ORDER BY
     job_id ASC;
 
--- »ç¿øÀÇ Á¤º¸ Áß ¾÷¹«¾ÆÀÌµð¸¸ Ãâ·Â
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½
 SELECT
     job_id
 FROM
@@ -36,52 +36,52 @@ FROM
 ORDER BY
     job_id ASC;
 
--- ¸ðµç »ç¿øÀÇ Á¤º¸ Áß ¾÷¹« ¾ÆÀÌµð¿Í ±Þ¿© Ãâ·Â
--- ¾÷¹« ¾ÆÀÌµð´Â ¾÷¹«·Î, ±Þ¿©´Â ¿ù±ÞÀ¸·Î Ãâ·ÂµÇµµ·Ï
+-- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ ï¿½Þ¿ï¿½ ï¿½ï¿½ï¿½
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Þ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÂµÇµï¿½ï¿½ï¿½
 SELECT
-    job_id  ¾÷¹«,
-    salary  ¿ù±Þ
+    job_id  ï¿½ï¿½ï¿½ï¿½,
+    salary  ï¿½ï¿½ï¿½ï¿½
 FROM
     employees;
 
 SELECT
-    job_id  AS ¾÷¹«,
-    salary  AS ¿ù±Þ
+    job_id  AS ï¿½ï¿½ï¿½ï¿½,
+    salary  AS ï¿½ï¿½ï¿½ï¿½
 FROM
     employees;
 
--- ¿ù±Þ »çÀÌ¿¡ ($)  Ãâ·Â
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¿ï¿½ ($)  ï¿½ï¿½ï¿½
 SELECT
-    job_id  AS ¾÷¹«,
-    salary  AS "¿ù±Þ($)"
+    job_id  AS ï¿½ï¿½ï¿½ï¿½,
+    salary  AS "ï¿½ï¿½ï¿½ï¿½($)"
 FROM
     employees;
 
--- ¸ðµç »ç¿øÀÇ ¼ö¸¦ Ãâ·Â
+-- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 SELECT
     COUNT(*)
 FROM
     employees;
 
--- ¸ðµç È¸¿ø ¸ñ·Ïº¸±â
+-- ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½Ïºï¿½ï¿½ï¿½
 SELECT
     *
 FROM
     member;
 
--- ¸ðµç È¸¿ø ¼ö º¸±â
+-- ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 SELECT
     COUNT(*) AS row_count
 FROM
     member;
 
--- ¸ðµç »ç¿øÀÇ ¼ö¸¦ Ãâ·Â
+-- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 SELECT
     COUNT(*) emp_count
 FROM
     employees;
 
--- ¸ðµç »ç¿øÀÇ ÀÌ¸§À» Ãâ·Â(ÀÌ¸§°ú ¼ºÀ» ÇÏ³ªÀÇ ÄÃ·³À¸·Î Ãâ·Â °ø¹éÇÏ³ª Ãß°¡ÇØ¼­)
+-- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï³ï¿½ ï¿½ß°ï¿½ï¿½Ø¼ï¿½)
 SELECT
     first_name
     || ' '
@@ -89,7 +89,7 @@ SELECT
 FROM
     employees;
 
--- ÀÚ¹Ù¿¡¼­ °¡Á®¿À±â À§ÇØ¼­ º°Äª FULL_NAMEÀ» ÁÜ
+-- ï¿½Ú¹Ù¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½Äª FULL_NAMEï¿½ï¿½ ï¿½ï¿½
 SELECT
     first_name
     || ' '
@@ -97,7 +97,7 @@ SELECT
 FROM
     employees;
 
--- 10¹ø ºÎ¼­ÀÇ »ç¿øµéÀÇ »ç¹ø°ú ºÎ¼­ÄÚµå Ãâ·ÂÇØºÁ
+-- 10ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½Øºï¿½
 SELECT
     employee_id,
     department_id
@@ -106,7 +106,7 @@ FROM
 WHERE
     department_id = 10;
 
--- 30¹ø ºÎ¼­ÀÇ »ç¿øÀÇ ±Þ¿©¿Í »ç¹ø Ãâ·ÂÇØºÁ
+-- 30ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Øºï¿½
 SELECT
     salary,
     department_id
@@ -115,7 +115,7 @@ FROM
 WHERE
     department_id = 30;
 
--- 30¹ø ºÎ¼­ÀÇ »ç¿øµéÀÇ ±Þ¿©¿Í ºÎ¼­ÄÚµå Ãâ·Â
+-- 30ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¿ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½
 SELECT
     salary,
     employee_id
@@ -159,7 +159,7 @@ FROM
 WHERE
     department_id != 30;
 
--- 30¹ø ºÎ¼­ ÀÌ¿ÜÀÇ ºÎ¼­»ç¶÷µéÀÇ ºÎ¼­¹øÈ£, ±Þ¿© Ãâ·Â
+-- 30ï¿½ï¿½ ï¿½Î¼ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½È£, ï¿½Þ¿ï¿½ ï¿½ï¿½ï¿½
 SELECT
     department_id  deptno,
     salary         sal
@@ -168,7 +168,7 @@ FROM
 WHERE
     department_id != 30;
 
--- 59¹øÂ° ¹®¹ý°ú °°´Ù.
+-- 59ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 SELECT
     department_id  deptno,
     salary         sal
@@ -177,8 +177,8 @@ FROM
 WHERE
     NOT department_id = 30;
 
--- NULLÀÌ µé¾î°¡ ÀÖ´Â °ªÀ» Ã£À¸·Á¸é IS ¶ó´Â°É ½á ÁÖ¾î¾ßÇÑ´Ù. = ¿¬»êÀÚ°¡ µé¾î°¡°ÔµÇ¸é NULLÀÌ¶ó´Â ÅØ½ºÆ®°¡ 
--- µé¾î°¡Á® ÀÖ´ÂÁö Ã¼Å©ÇÑ´Ù.
+-- NULLï¿½ï¿½ ï¿½ï¿½î°¡ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IS ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½Ñ´ï¿½. = ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½î°¡ï¿½ÔµÇ¸ï¿½ NULLï¿½Ì¶ï¿½ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ 
+-- ï¿½ï¿½î°¡ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ñ´ï¿½.
 SELECT
     department_id  deptno,
     salary         sal
@@ -209,7 +209,7 @@ WHERE
     department_id IS NOT NULL
     AND salary >= 20000;
 
--- ±Þ¿©°¡ 20000ÀÌ»óÀÌ°Å³ª 2100 ÀÌÇÏÀÎ »ç¿øµéÀÇ »ç¿øÄÚµå ±Þ¿© Ãâ·Â
+-- ï¿½Þ¿ï¿½ï¿½ï¿½ 20000ï¿½Ì»ï¿½ï¿½Ì°Å³ï¿½ 2100 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½Þ¿ï¿½ ï¿½ï¿½ï¿½
 SELECT
     employee_id,
     salary
@@ -218,7 +218,7 @@ FROM
 WHERE
     salary >= 20000
     OR salary <= 2100;
--- ±Þ¿© 2200¹Ì¸¸ÀÎ ¾Öµé 
+-- ï¿½Þ¿ï¿½ 2200ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Öµï¿½ 
 SELECT
     employee_id,
     salary
@@ -227,7 +227,7 @@ FROM
 WHERE
     salary < 2200;
 
--- 75 77 ÇÑ²¨¹ø¿¡ Ãâ·ÂÇØºÁ
+-- 75 77 ï¿½Ñ²ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Øºï¿½
 SELECT
     employee_id,
     salary
@@ -245,7 +245,7 @@ FROM
 WHERE
     salary < 2200;
 
--- ÇÑ²¨¹ø¿¡ Ãâ·ÂÇÒ°Çµ¥ Áßº¹ Çà Á¦°ÅÇÏ°í »Ì¾ÆºÁ
+-- ï¿½Ñ²ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò°Çµï¿½ ï¿½ßºï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ì¾Æºï¿½
 SELECT
     employee_id,
     salary
@@ -263,7 +263,7 @@ FROM
 WHERE
     salary < 2200;
 
--- ÇÑ²¨¹ø¿¡ Ãâ·ÂÇÒ°Çµ¥ Áßº¹ Çà ¸¸ Ãâ·ÂÇØºÁ
+-- ï¿½Ñ²ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò°Çµï¿½ ï¿½ßºï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Øºï¿½
 SELECT
     employee_id,
     salary
@@ -298,7 +298,7 @@ FROM
 WHERE
     salary < 2200;
 
--- ±Þ¿©°¡ 4000ÀÌ»óÇÏ¸é¼­ 1000ÀÌÇÏÀÎ »ç¿øµé Ãâ·Â(»ç¹ø,ÀÌ¸§,±Þ¿©)
+-- ï¿½Þ¿ï¿½ï¿½ï¿½ 4000ï¿½Ì»ï¿½ï¿½Ï¸é¼­ 1000ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½,ï¿½Ì¸ï¿½,ï¿½Þ¿ï¿½)
 SELECT
     employee_id,
     first_name,
@@ -309,7 +309,7 @@ WHERE
         salary >= 4000
     AND salary <= 10000;
 
--- BETWEENÀ¸·Î ¶È°°ÀÌ Ã³¸®ÇÒ ¼ö ÀÖÀ½ 99¹øÂ° SQL¹®
+-- BETWEENï¿½ï¿½ï¿½ï¿½ ï¿½È°ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 99ï¿½ï¿½Â° SQLï¿½ï¿½
 SELECT
     employee_id,
     first_name,
@@ -321,7 +321,7 @@ WHERE
 ORDER BY
     salary DESC;
 
--- 100, 110, 130, 140¹ø »ç¿øÀÇ »ç¹ø, ±Þ¿©, ÀÏ»çÀÏÀÚ Ãâ·Â
+-- 100, 110, 130, 140ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½Þ¿ï¿½, ï¿½Ï»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 SELECT
     employee_id,
     salary,
@@ -334,7 +334,7 @@ WHERE
     OR employee_id = 130
     OR employee_id = 140;
 
--- INÀ¸·Î ÄÚµå¸¦ ±ò²ûÇÏ°Ô ÇØÁÙ ¼ö ÀÖ´Ù.
+-- INï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
 SELECT
     employee_id,
     salary,
@@ -351,7 +351,7 @@ FROM
 WHERE
     department_id = 30;
 
--- 8000, 12000, 20000 ÀÌ¶ó´Â ¿ù±ÞÁß ÃÖ°í¿ù±Þº¸´Ù ÀûÀº ¿ù±ÞÀ» ¹Þ´Â »ç¿øÁ¤º¸°¡Á®¿Í¹Ù
+-- 8000, 12000, 20000 ï¿½Ì¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ï¿½ï¿½ï¿½Þºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¹ï¿½
 SELECT
     *
 FROM
@@ -370,7 +370,7 @@ WHERE
                     12000,
                     20000 );
 
--- »ç¿ø¸í¿¡ ev ´Ü¾î°¡µé¾î°¡´Â »ç¿øÀÌ¸§µé¸¸ Ãâ·ÂÇØº¼·¡?
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ev ï¿½Ü¾î°¡ï¿½ï¿½î°¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½é¸¸ ï¿½ï¿½ï¿½ï¿½Øºï¿½ï¿½ï¿½?
 SELECT
     first_name,
     last_name
@@ -436,14 +436,14 @@ SELECT
 FROM
     employees;
 
--- »ç¿øµéÀÇ Ä¿¹Ì¼Ç Àû¿ëÇØ¼­ Ãâ·ÂÇØº¸±â
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½Øºï¿½ï¿½ï¿½
 SELECT
     employee_id,
     commission_pct
 FROM
     employees;
 
--- Ä¿¹Ì¼ÇÀÌ nullÀÎ »ç¿øµéÀÌ Ä¿¹Ì¼Ç 5·Î º¯°æµÇ¾îÁü.
+-- Ä¿ï¿½Ì¼ï¿½ï¿½ï¿½ nullï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Ì¼ï¿½ 5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½.
 SELECT
     employee_id,
     nvl(commission_pct, 5)
@@ -494,3 +494,52 @@ SELECT
     to_char(sysdate, 'dd')
 FROM
     dual;
+
+    --ì´ë¦„ì´ 'Steven'ì¸ ì‚¬ì›ì •ë³´ ì¶œë ¥ì‹œ ì‚¬ë²ˆ,ì‚¬ì›ëª…,ë¶€ì„œë²ˆí˜¸,ë¶€ì„œëª…ì´ ë³´ì´ë„ë¡ í•  ê²ƒ.
+--ë‹¨,ë¶€ì„œëª… ì¶œë ¥ì‹œ 'Executive','í–‰ì •ë¶€,'Shipping','ë°œì†¡ë¶€'í• ê²ƒ.
+select employee_id,first_name||' '||last_name
+,e.department_id ,
+decode(department_name,'Executive','í–‰ì •ë¶€',
+                        'Shipping','ë°œì†¡ë¶€') department_name
+from employees e left outer join departments d
+on e.department_id = d.department_id
+where e.first_name = 'Steven';
+
+--view : ë³µìž¡í•œ ì¿¼ë¦¬ë¬¸ì„ ë…¼ë¦¬ì ì¸ í…Œì´ë¸”í˜•ì‹ìœ¼ë¡œ ë³´ì—¬ì¤„ìˆ˜ìžˆë‹¤.
+CREATE VIEW EMP_DEPT_JOIN_VIEW
+( EMP_ID
+, EMP_NAME
+, DEPT_ID
+, DEPT_NAME
+)
+AS select employee_id,first_name||' '||last_name
+,e.department_id ,
+decode(department_name,'Executive','í–‰ì •ë¶€',
+                        'Shipping','ë°œì†¡ë¶€') department_name
+from employees e left outer join departments d
+on e.department_id = d.department_id;
+
+select * from EMP_DEPT_JOIN_VIEW
+where emp_name like '%Steven%'
+order by emp_id desc;
+
+
+--ê²€ìƒ‰ê²°ê³¼í‘œë¥¼ ë³µì œí•´ì„œ ë³„ë„ì˜ í…Œì´ë¸”ë¡œ ìƒì„±í•˜ê¸°.
+CREATE table EMP_DEPT_JOIN_TAB
+( EMP_ID
+, EMP_NAME
+, DEPT_ID
+, DEPT_NAME
+)
+AS (select employee_id,first_name||' '||last_name
+,e.department_id ,
+decode(department_name,'Executive','í–‰ì •ë¶€',
+                        'Shipping','ë°œì†¡ë¶€') department_name
+from employees e left outer join departments d
+on e.department_id = d.department_id);
+
+create table temp_emp
+as (select employee_id,first_name,last_name,salary,department_id,job_id from employees);
+
+create table temp_dept
+as (select * from departments);
