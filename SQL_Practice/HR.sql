@@ -494,52 +494,114 @@ SELECT
     to_char(sysdate, 'dd')
 FROM
     dual;
+    
+select * from employees;
 
-    --이름이 'Steven'인 사원정보 출력시 사번,사원명,부서번호,부서명이 보이도록 할 것.
---단,부서명 출력시 'Executive','행정부,'Shipping','발송부'할것.
-select employee_id,first_name||' '||last_name
-,e.department_id ,
-decode(department_name,'Executive','행정부',
-                        'Shipping','발송부') department_name
-from employees e left outer join departments d
-on e.department_id = d.department_id
-where e.first_name = 'Steven';
+select count(*) from employees;
 
---view : 복잡한 쿼리문을 논리적인 테이블형식으로 보여줄수있다.
-CREATE VIEW EMP_DEPT_JOIN_VIEW
-( EMP_ID
-, EMP_NAME
-, DEPT_ID
-, DEPT_NAME
-)
-AS select employee_id,first_name||' '||last_name
-,e.department_id ,
-decode(department_name,'Executive','행정부',
-                        'Shipping','발송부') department_name
-from employees e left outer join departments d
-on e.department_id = d.department_id;
+select count(*) from departments;
 
-select * from EMP_DEPT_JOIN_VIEW
-where emp_name like '%Steven%'
-order by emp_id desc;
+select 109*27 from dual;
+
+select * from employees,departments;
+
+-- 1 2 3 4 5
+select (1-1)*10 +1 startRow, (1-1)*10 +1 + 10 -1 endRow from dual;
 
 
---검색결과표를 복제해서 별도의 테이블로 생성하기.
-CREATE table EMP_DEPT_JOIN_TAB
-( EMP_ID
-, EMP_NAME
-, DEPT_ID
-, DEPT_NAME
-)
-AS (select employee_id,first_name||' '||last_name
-,e.department_id ,
-decode(department_name,'Executive','행정부',
-                        'Shipping','발송부') department_name
-from employees e left outer join departments d
-on e.department_id = d.department_id);
+select 
+    *
+from (  select 
+            rownum rnum,
+            employee_id,
+            first_name||' '||last_name emp_name,
+            salary
+        from employees)
+where rnum between 6 and 10;
 
+--업무별 최소급여를 받는 사람들의 정보
+select employee_id,
+    first_name||' '||last_name emp_name,
+    job_id,
+    salary
+from employees
+where (job_id,salary) 
+        in (SELECT  job_id,min(salary) from employees group by job_id);
+
+        -----------------임시테이블 복사
 create table temp_emp
 as (select employee_id,first_name,last_name,salary,department_id,job_id from employees);
 
 create table temp_dept
 as (select * from departments);
+
+create table temp_job
+as (select * from jobs);
+
+-----------------임시테이블 복사------------------------
+---1.temp_dept------------------------------------------------
+create table temp_dept
+as (select * from departments);
+--PK추가.
+ALTER TABLE TEMP_DEPT  
+MODIFY (DEPARTMENT_ID NOT NULL);
+
+ALTER TABLE TEMP_DEPT
+ADD CONSTRAINT TEMP_DEPT_PK PRIMARY KEY 
+(
+  DEPARTMENT_ID 
+)
+ENABLE;
+
+---2.temp_job------------------------------------------------
+create table temp_job
+as (select * from jobs);
+--PK추가
+ALTER TABLE TEMP_JOB  
+MODIFY (JOB_ID NOT NULL);
+
+ALTER TABLE TEMP_JOB
+ADD CONSTRAINT TEMP_JOB_PK PRIMARY KEY 
+(
+  JOB_ID 
+)
+ENABLE;
+
+
+
+---3.temp_emp------------------------------------------------
+create table temp_emp
+as (select employee_id,first_name,last_name,salary,department_id,job_id from employees);
+--PK,FK 추가
+ALTER TABLE TEMP_EMP  
+MODIFY (EMPLOYEE_ID NOT NULL);
+
+ALTER TABLE TEMP_EMP
+ADD CONSTRAINT TEMP_EMP_PK PRIMARY KEY 
+(
+  EMPLOYEE_ID 
+)
+ENABLE;
+
+ALTER TABLE TEMP_EMP
+ADD CONSTRAINT TEMP_EMP_FK1 FOREIGN KEY
+(
+  DEPARTMENT_ID 
+)
+REFERENCES TEMP_DEPT
+(
+  DEPARTMENT_ID 
+)
+ENABLE;
+
+ALTER TABLE TEMP_EMP
+ADD CONSTRAINT TEMP_EMP_FK2 FOREIGN KEY
+(
+  JOB_ID 
+)
+REFERENCES TEMP_JOB
+(
+  JOB_ID 
+)
+ENABLE;
+----------------------------------------------------------------
