@@ -1,21 +1,25 @@
 package com.golfzonacademy.controller;
 
-import com.model.EmpDAO;
-import com.model.EmpDAOimpl;
-import com.model.EmpVO;
-import org.json.simple.JSONArray;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.model.DeptDAO;
+import com.model.DeptVO;
+
+
+@WebServlet({"/d_selectAll.do", "/d_insert.do",
+        "/d_insertOK.do",
+        "/json_emp_id.do", "/json_loc_id.do","/e.emp_dept_job.do"})
 public class DeptController extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private EmpDAO dao = new EmpDAOimpl();
+    private DeptDAO dao = new DeptDAOimpl();
 
     public DeptController() {
         super();
@@ -28,7 +32,7 @@ public class DeptController extends HttpServlet {
 
         if (sPath.equals("/d_selectAll.do")) {
 
-            List<EmpVO> vos = dao.selectAll();
+            List<DeptVO> vos = dao.selectAll();
             System.out.println("vos.size():" + vos.size());
 
             request.setAttribute("vos", vos);
@@ -39,38 +43,54 @@ public class DeptController extends HttpServlet {
 
             request.getRequestDispatcher("dept/insert.jsp")
                     .forward(request, response);
-        } else if (sPath.equals("/json_dept_id.do")) {
+        } else if (sPath.equals("/d_insertOK.do")) {
 
-            List<Integer> dept_ids = dao.selectDeptID();
-            System.out.println(dept_ids);
+            String department_name = request.getParameter("department_name");
+            String manager_id = request.getParameter("manager_id");
+            String location_id = request.getParameter("location_id");
 
+            DeptVO vo = new DeptVO();
+            vo.setDepartment_name(department_name);
+            vo.setManager_id(Integer.parseInt(manager_id));
+            vo.setLocation_id(Integer.parseInt(location_id));
+
+            int result = dao.insert(vo);
+            if (result == 1)
+                response.sendRedirect("d_selectAll.do");
+            else
+                response.sendRedirect("d_insert.do");
+        } else if (sPath.equals("/json_emp_id.do")) {
+
+            List<Integer> emp_ids = dao.selectEmpID();
+            System.out.println("emp_ids.size():" + emp_ids.size());
+//
             PrintWriter out = response.getWriter();
-            out.print(dept_ids.toString());
+            out.print(emp_ids.toString());
+//			out.print("[100,101,102]");
 
-        } else if (sPath.equals("/json_job_id.do")) {
-
-            List<String> job_ids = dao.selectJobID();
-            System.out.println(job_ids);
-//			String txt = "[";
-//			for (int i=0;i<job_ids.size();i++) {
-//				txt += "\""+job_ids.get(i)+"\"";
-//				if(i<job_ids.size()-1)txt += ",";
-//			}
-//			txt += "]";
-
-            //simple-json.jar 라이브러리사용
-            JSONArray arr = new JSONArray();
-            arr.addAll(job_ids);
+        } else if (sPath.equals("/json_loc_id.do")) {
+            List<Integer> loc_ids = dao.selectLocID();
+            System.out.println("loc_ids.size():" + loc_ids.size());
+//
             PrintWriter out = response.getWriter();
-//            out.print(arr);
-            out.print("[1500,1700,1800]");
+            out.print(loc_ids.toString());
+//			out.print("[100,101,102]");
 
+        } else if (sPath.equals("/emp_dept_job.do")) {
+
+            List<DeptVO> vos = dao.selectAll();
+            System.out.println("vos.size():" + vos.size());
+
+            request.setAttribute("vos", vos);
+
+            request.getRequestDispatcher("/emp_dept_job.do")
+                    .forward(request, response);
         }
-
-
     }
 
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         doGet(request, response);
     }
 }

@@ -10,4 +10,6 @@ public interface EmpDAO {
 
 	public List<String> selectJobID();
 
+	public int insert(EmpVO vo);
+
 }

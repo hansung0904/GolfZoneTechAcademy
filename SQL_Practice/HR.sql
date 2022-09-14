@@ -1,10 +1,8 @@
--- ��� ����� ���� ���
 SELECT
     *
 FROM
     employees;
 
--- ��� ����� ���� �� �������̵� ��� (��������)
 SELECT
     job_id
 FROM
@@ -12,7 +10,6 @@ FROM
 ORDER BY
     job_id ASC;
 
--- DISTINCT�� �ߺ�����
 SELECT DISTINCT
     job_id
 FROM
@@ -20,7 +17,6 @@ FROM
 ORDER BY
     job_id ASC;
 
--- ����� ���� �� �������̵� ���
 SELECT
     job_id
 FROM
@@ -36,8 +32,6 @@ FROM
 ORDER BY
     job_id ASC;
 
--- ��� ����� ���� �� ���� ���̵�� �޿� ���
--- ���� ���̵�� ������, �޿��� �������� ��µǵ���
 SELECT
     job_id  ����,
     salary  ����
@@ -50,38 +44,32 @@ SELECT
 FROM
     employees;
 
--- ���� ���̿� ($)  ���
 SELECT
     job_id  AS ����,
     salary  AS "����($)"
 FROM
     employees;
 
--- ��� ����� ���� ���
 SELECT
     COUNT(*)
 FROM
     employees;
 
--- ��� ȸ�� ��Ϻ���
 SELECT
     *
 FROM
     member;
 
--- ��� ȸ�� �� ����
 SELECT
     COUNT(*) AS row_count
 FROM
     member;
 
--- ��� ����� ���� ���
 SELECT
     COUNT(*) emp_count
 FROM
     employees;
 
--- ��� ����� �̸��� ���(�̸��� ���� �ϳ��� �÷����� ��� �����ϳ� �߰��ؼ�)
 SELECT
     first_name
     || ' '
@@ -89,7 +77,6 @@ SELECT
 FROM
     employees;
 
--- �ڹٿ��� �������� ���ؼ� ��Ī FULL_NAME�� ��
 SELECT
     first_name
     || ' '
@@ -97,7 +84,6 @@ SELECT
 FROM
     employees;
 
--- 10�� �μ��� ������� ����� �μ��ڵ� ����غ�
 SELECT
     employee_id,
     department_id
@@ -106,7 +92,6 @@ FROM
 WHERE
     department_id = 10;
 
--- 30�� �μ��� ����� �޿��� ��� ����غ�
 SELECT
     salary,
     department_id
@@ -115,7 +100,6 @@ FROM
 WHERE
     department_id = 30;
 
--- 30�� �μ��� ������� �޿��� �μ��ڵ� ���
 SELECT
     salary,
     employee_id
@@ -159,7 +143,7 @@ FROM
 WHERE
     department_id != 30;
 
--- 30�� �μ� �̿��� �μ�������� �μ���ȣ, �޿� ���
+-- 30�� �μ� �̿��� �μ��������? �μ���ȣ, �޿� ���?
 SELECT
     department_id  deptno,
     salary         sal
@@ -177,8 +161,8 @@ FROM
 WHERE
     NOT department_id = 30;
 
--- NULL�� �� �ִ� ���� ã������ IS ��°� �� �־���Ѵ�. = �����ڰ� ���ԵǸ� NULL�̶�� �ؽ�Ʈ�� 
--- ���� �ִ��� üũ�Ѵ�.
+-- NULL�� ���? �ִ� ���� ã������ IS ��°�? �� �־���Ѵ�?. = �����ڰ� ���ԵǸ�? NULL�̶��? �ؽ�Ʈ�� 
+-- ����? �ִ��� üũ�Ѵ�.
 SELECT
     department_id  deptno,
     salary         sal
@@ -209,7 +193,6 @@ WHERE
     department_id IS NOT NULL
     AND salary >= 20000;
 
--- �޿��� 20000�̻��̰ų� 2100 ������ ������� ����ڵ� �޿� ���
 SELECT
     employee_id,
     salary
@@ -227,7 +210,7 @@ FROM
 WHERE
     salary < 2200;
 
--- 75 77 �Ѳ����� ����غ�
+-- 75 77 �Ѳ����� ����غ�?
 SELECT
     employee_id,
     salary
@@ -245,7 +228,7 @@ FROM
 WHERE
     salary < 2200;
 
--- �Ѳ����� ����Ұǵ� �ߺ� �� �����ϰ� �̾ƺ�
+-- �Ѳ����� ����Ұǵ�? �ߺ� �� �����ϰ� �̾ƺ�
 SELECT
     employee_id,
     salary
@@ -263,7 +246,7 @@ FROM
 WHERE
     salary < 2200;
 
--- �Ѳ����� ����Ұǵ� �ߺ� �� �� ����غ�
+-- �Ѳ����� ����Ұǵ�? �ߺ� �� �� ����غ�?
 SELECT
     employee_id,
     salary
@@ -298,7 +281,7 @@ FROM
 WHERE
     salary < 2200;
 
--- �޿��� 4000�̻��ϸ鼭 1000������ ����� ���(���,�̸�,�޿�)
+-- �޿��� 4000�̻��ϸ鼭 1000������ �����? ���?(���?,�̸�,�޿�)
 SELECT
     employee_id,
     first_name,
@@ -321,7 +304,7 @@ WHERE
 ORDER BY
     salary DESC;
 
--- 100, 110, 130, 140�� ����� ���, �޿�, �ϻ����� ���
+-- 100, 110, 130, 140�� �����? ���?, �޿�, �ϻ����� ���?
 SELECT
     employee_id,
     salary,
@@ -334,7 +317,7 @@ WHERE
     OR employee_id = 130
     OR employee_id = 140;
 
--- IN���� �ڵ带 ����ϰ� ���� �� �ִ�.
+-- IN���� �ڵ带 ����ϰ�? ���� �� �ִ�.
 SELECT
     employee_id,
     salary,
@@ -351,7 +334,7 @@ FROM
 WHERE
     department_id = 30;
 
--- 8000, 12000, 20000 �̶�� ������ �ְ����޺��� ���� ������ �޴� ������������͹�
+-- 8000, 12000, 20000 �̶��? ������ �ְ����޺��� ���� ������ �޴� ������������͹�?
 SELECT
     *
 FROM
@@ -370,7 +353,7 @@ WHERE
                     12000,
                     20000 );
 
--- ������� ev �ܾ���� ����̸��鸸 ����غ���?
+-- �������? ev �ܾ����? ����̸���? ����غ���??
 SELECT
     first_name,
     last_name
@@ -436,14 +419,14 @@ SELECT
 FROM
     employees;
 
--- ������� Ŀ�̼� �����ؼ� ����غ���
+-- �������? Ŀ�̼� �����ؼ� ����غ���?
 SELECT
     employee_id,
     commission_pct
 FROM
     employees;
 
--- Ŀ�̼��� null�� ������� Ŀ�̼� 5�� ����Ǿ���.
+-- Ŀ�̼��� null�� �������? Ŀ�̼� 5�� ����Ǿ���?.
 SELECT
     employee_id,
     nvl(commission_pct, 5)
@@ -494,114 +477,232 @@ SELECT
     to_char(sysdate, 'dd')
 FROM
     dual;
-    
-select * from employees;
 
-select count(*) from employees;
+SELECT
+    *
+FROM
+    employees;
 
-select count(*) from departments;
+SELECT
+    COUNT(*)
+FROM
+    employees;
 
-select 109*27 from dual;
+SELECT
+    COUNT(*)
+FROM
+    departments;
 
-select * from employees,departments;
+SELECT
+    109 * 27
+FROM
+    dual;
+
+SELECT
+    *
+FROM
+    employees,
+    departments;
 
 -- 1 2 3 4 5
-select (1-1)*10 +1 startRow, (1-1)*10 +1 + 10 -1 endRow from dual;
+SELECT
+    ( 1 - 1 ) * 10 + 1           startrow,
+    ( 1 - 1 ) * 10 + 1 + 10 - 1  endrow
+FROM
+    dual;
 
-
-select 
+SELECT
     *
-from (  select 
-            rownum rnum,
+FROM
+    (
+        SELECT
+            ROWNUM         rnum,
             employee_id,
-            first_name||' '||last_name emp_name,
+            first_name
+            || ' '
+            || last_name   emp_name,
             salary
-        from employees)
-where rnum between 6 and 10;
+        FROM
+            employees
+    )
+WHERE
+    rnum BETWEEN 6 AND 10;
 
---업무별 최소급여를 받는 사람들의 정보
-select employee_id,
-    first_name||' '||last_name emp_name,
+SELECT
+    employee_id,
+    first_name
+    || ' '
+    || last_name emp_name,
     job_id,
     salary
-from employees
-where (job_id,salary) 
-        in (SELECT  job_id,min(salary) from employees group by job_id);
+FROM
+    employees
+WHERE
+    ( job_id, salary ) IN (
+        SELECT
+            job_id, MIN(salary)
+        FROM
+            employees
+        GROUP BY
+            job_id
+    );
 
-        -----------------임시테이블 복사
-create table temp_emp
-as (select employee_id,first_name,last_name,salary,department_id,job_id from employees);
+CREATE TABLE temp_emp
+    AS
+        ( SELECT
+            employee_id,
+            first_name,
+            last_name,
+            salary,
+            department_id,
+            job_id
+        FROM
+            employees
+        );
 
-create table temp_dept
-as (select * from departments);
+CREATE TABLE temp_dept
+    AS
+        ( SELECT
+            *
+        FROM
+            departments
+        );
 
-create table temp_job
-as (select * from jobs);
+CREATE TABLE temp_job
+    AS
+        ( SELECT
+            *
+        FROM
+            jobs
+        );
 
------------------임시테이블 복사------------------------
 ---1.temp_dept------------------------------------------------
-create table temp_dept
-as (select * from departments);
---PK추가.
-ALTER TABLE TEMP_DEPT  
-MODIFY (DEPARTMENT_ID NOT NULL);
+CREATE TABLE temp_dept
+    AS
+        ( SELECT
+            *
+        FROM
+            departments
+        );
 
-ALTER TABLE TEMP_DEPT
-ADD CONSTRAINT TEMP_DEPT_PK PRIMARY KEY 
-(
-  DEPARTMENT_ID 
-)
-ENABLE;
+ALTER TABLE temp_dept MODIFY (
+    department_id NOT NULL
+);
+
+ALTER TABLE temp_dept ADD CONSTRAINT temp_dept_pk PRIMARY KEY ( department_id ) ENABLE;
 
 ---2.temp_job------------------------------------------------
-create table temp_job
-as (select * from jobs);
---PK추가
-ALTER TABLE TEMP_JOB  
-MODIFY (JOB_ID NOT NULL);
+CREATE TABLE temp_job
+    AS
+        ( SELECT
+            *
+        FROM
+            jobs
+        );
+--PK추�?
+ALTER TABLE temp_job MODIFY (
+    job_id NOT NULL
+);
 
-ALTER TABLE TEMP_JOB
-ADD CONSTRAINT TEMP_JOB_PK PRIMARY KEY 
-(
-  JOB_ID 
-)
-ENABLE;
-
-
+ALTER TABLE temp_job ADD CONSTRAINT temp_job_pk PRIMARY KEY ( job_id ) ENABLE;
 
 ---3.temp_emp------------------------------------------------
-create table temp_emp
-as (select employee_id,first_name,last_name,salary,department_id,job_id from employees);
---PK,FK 추가
-ALTER TABLE TEMP_EMP  
-MODIFY (EMPLOYEE_ID NOT NULL);
+CREATE TABLE temp_emp
+    AS
+        ( SELECT
+            employee_id,
+            first_name,
+            last_name,
+            salary,
+            department_id,
+            job_id
+        FROM
+            employees
+        );
 
-ALTER TABLE TEMP_EMP
-ADD CONSTRAINT TEMP_EMP_PK PRIMARY KEY 
-(
-  EMPLOYEE_ID 
-)
-ENABLE;
+ALTER TABLE temp_emp MODIFY (
+    employee_id NOT NULL
+);
 
-ALTER TABLE TEMP_EMP
-ADD CONSTRAINT TEMP_EMP_FK1 FOREIGN KEY
-(
-  DEPARTMENT_ID 
-)
-REFERENCES TEMP_DEPT
-(
-  DEPARTMENT_ID 
-)
-ENABLE;
+ALTER TABLE temp_emp ADD CONSTRAINT temp_emp_pk PRIMARY KEY ( employee_id ) ENABLE;
 
-ALTER TABLE TEMP_EMP
-ADD CONSTRAINT TEMP_EMP_FK2 FOREIGN KEY
-(
-  JOB_ID 
-)
-REFERENCES TEMP_JOB
-(
-  JOB_ID 
-)
-ENABLE;
+ALTER TABLE temp_emp
+    ADD CONSTRAINT temp_emp_fk1 FOREIGN KEY ( department_id )
+        REFERENCES temp_dept ( department_id )
+    ENABLE;
+
+ALTER TABLE temp_emp
+    ADD CONSTRAINT temp_emp_fk2 FOREIGN KEY ( job_id )
+        REFERENCES temp_job ( job_id )
+    ENABLE;
 ----------------------------------------------------------------
+
+CREATE OR REPLACE VIEW join_emp_dept_view AS
+    SELECT
+        employee_id,
+        first_name
+        || ' '
+        || last_name emp_name,
+        salary,
+        dept.department_name
+    FROM
+             temp_emp emp
+        INNER JOIN temp_dept dept ON emp.department_id = dept.department_id;
+
+SELECT
+    department_id,
+    job_id,
+    SUM(salary)
+FROM
+    employees
+WHERE
+    department_id <= 40
+GROUP BY
+    ROLLUP(department_id,
+           job_id)
+ORDER BY
+    department_id;
+
+WITH e AS (
+    SELECT
+        employee_id,
+        manager_id,
+        salary,
+        last_name
+    FROM
+        employees
+    WHERE
+        department_id = 50
+), d AS (
+    SELECT
+        AVG(salary) avg_salary
+    FROM
+        employees
+    WHERE
+        department_id = 50
+)
+SELECT
+    e.employee_id,
+    e.last_name,
+    e.salary
+FROM
+    e,
+    d
+WHERE
+    e.salary < d.avg_salary;
+
+SELECT
+    *
+FROM
+    join_emp_dept_view;      
+    
+       SELECT
+        employee_id,
+        first_name
+        || ' '
+        || last_name emp_name,
+        salary,
+        dept.department_name
+    FROM
+             temp_emp emp
+        INNER JOIN temp_dept dept ON emp.department_id = dept.department_id temp_job job ON job._jobid = job.job_title job_title;
