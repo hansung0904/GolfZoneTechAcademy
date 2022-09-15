@@ -1,4 +1,4 @@
-package com.golfzonacademy.controller;
+package test.com.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;

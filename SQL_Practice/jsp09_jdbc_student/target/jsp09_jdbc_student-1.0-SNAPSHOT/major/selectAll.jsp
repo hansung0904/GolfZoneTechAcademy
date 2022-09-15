@@ -5,21 +5,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>학과목록</title>
+<title>전공목록</title>
 </head>
 <body>
-	<h1>학과목록</h1>
+	<h1>전공목록</h1>
 	<table border="1">
 		<tr>	
-			<th>dept_id</th>
-			<th>dept_name</th>
-			<th>mgr_id</th>
+			<th>major_id</th>
+			<th>major_title</th>
+			<th>min_score</th>
+			<th>max_score</th>
 		</tr>
 		<c:forEach var="vo" items="${vos}">
 			<tr>
-				<td>${vo.dept_id}</td>
-				<td>${vo.dept_name}</td>
-				<td>${vo.mgr_id}</td>
+				<td>${vo.major_id}</td>
+				<td>${vo.major_title}</td>
+				<td>${vo.min_score}</td>
+				<td>${vo.max_score}</td>
 			</tr>
 		</c:forEach>
 	</table>

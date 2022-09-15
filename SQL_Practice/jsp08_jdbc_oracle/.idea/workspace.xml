@@ -11,17 +11,6 @@
       <change beforePath="$PROJECT_DIR$/../../JSP/JSP06_fileupload/target/jsp06fileupload-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../JSP/JSP06_fileupload/target/jsp06fileupload-1.0-SNAPSHOT/upload/moon.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../JSP/JSP07_ajax_jquery/JSP07_ajax_jquery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JSP/JSP07_ajax_jquery/JSP07_ajax_jquery.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HR.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../HR.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KOSTA.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../KOSTA.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/golfzonacademy/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/golfzonacademy/controller/DeptController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/golfzonacademy/controller/EmpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/golfzonacademy/controller/EmpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/model/EmpDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/model/EmpDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/model/EmpDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/model/EmpDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/model/EmpDB_oracle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/java/com/model/EmpDB_oracle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/webapp/dept/insert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/webapp/dept/insert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/webapp/dept/selectAll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/webapp/dept/selectAll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/webapp/emp/insert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/webapp/emp/insert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspwithoracle/src/main/webapp/emp/selectAll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspwithoracle/src/main/webapp/emp/selectAll.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +43,7 @@
       <updated>1663129932380</updated>
       <workItem from="1663129933567" duration="8000" />
       <workItem from="1663136678526" duration="1000" />
+      <workItem from="1663200396044" duration="6000" />
     </task>
     <servers />
   </component>

@@ -400,3 +400,60 @@ insert into dept values (10555959, '기계자동차공학부4',7);
 
 CREATE SEQUENCE SEQ_DEPT INCREMENT BY 10 START WITH 10;
 CREATE SEQUENCE SEQ_STUDENT INCREMENT BY 1 START WITH 100;
+
+--학과 임의정보 입력
+select * from dept;
+insert into dept(dept_id,dept_name,mgr_id) 
+values(seq_dept.nextval,'경영과',100);
+insert into dept(dept_id,dept_name,mgr_id) 
+values(seq_dept.nextval,'컴공과',110);
+insert into dept(dept_id,dept_name,mgr_id) 
+values(seq_dept.nextval,'철학과',120);
+insert into dept(dept_id,dept_name,mgr_id) 
+values(seq_dept.nextval,'사회체육과',130);
+
+--전공 임의정보입력
+select * from major;
+insert into major(major_id,major_title,min_score,max_score) 
+values('MJ_01','경영학',0,100);
+insert into major(major_id,major_title,min_score,max_score) 
+values('MJ_02','컴공학',0,100);
+insert into major(major_id,major_title,min_score,max_score) 
+values('MJ_03','동양철학',50,100);
+insert into major(major_id,major_title,min_score,max_score) 
+values('MJ_04','사회체육학',50,100);
+
+--학생 임의정보입력
+select * from student;
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'홍길동1',91,'MJ_01',10);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'홍길동2',92,'MJ_01',10);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'홍길동3',93,'MJ_01',10);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'홍길동4',94,'MJ_01',10);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'홍길동5',95,'MJ_02',10);
+
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'이순신1',81,'MJ_02',20);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'이순신2',82,'MJ_02',20);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'이순신3',83,'MJ_02',20);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'이순신4',84,'MJ_02',20);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'이순신5',85,'MJ_03',20);
+
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'소문난1',71,'MJ_03',30);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'소문난2',72,'MJ_03',30);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'소문난3',73,'MJ_03',30);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'소문난4',74,'MJ_03',30);
+insert into student(st_id,st_name,score,major_id,dept_id) 
+values(seq_student.nextval,'소문난5',75,'MJ_04',30);
