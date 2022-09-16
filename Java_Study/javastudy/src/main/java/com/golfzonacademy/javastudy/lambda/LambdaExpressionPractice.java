@@ -48,7 +48,7 @@ public class LambdaExpressionPractice {
         list.add("Element3");
 
         list.forEach(x -> System.out.println(x));
-        // 46번째줄 람다식은 list.forEach(System.out::println)으로 축약할 수도 있다.
+        // 50번째줄 람다식은 list.forEach(System.out::println)으로 축약할 수도 있다.
 
         MySum func = (a, b) -> a + b;
 
