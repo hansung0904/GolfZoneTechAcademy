@@ -10,7 +10,6 @@ import java.util.function.Supplier;
 
 public class LambdaExpressionPractice {
 
-
     public int sum(int a, int b) {
         return a + b;
     }
