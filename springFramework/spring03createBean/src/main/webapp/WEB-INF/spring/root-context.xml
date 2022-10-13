@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- TestBean tb = new TestBean(11,22,33); -->
+	<bean id="tb01" class="test.com.createbean.TestBean">
+		<constructor-arg>
+			<value>11</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>22</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>33</value>
+		</constructor-arg>
+	</bean>
+
+	<!-- TestBean tb = new TestBean(); -->
+	<bean id="tb02" class="test.com.createbean.TestBean">
+	</bean>
+
+	<bean id="tb03" class="test.com.createbean.TestBean3">
+		<property name="kor" value="99"></property>
+		<property name="eng" value="88"></property>
+		<property name="math" value="77"></property>
+	</bean>
+
+	<!-- Car-model,price 생성자빈으로 초기화 -->
+	<bean id="car" class="test.com.createbean.Car">
+		<constructor-arg>
+			<value>BMW</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>5000</value>
+		</constructor-arg>
+	</bean>
+
+
+	<!-- Book-title,price 세터빈으로 초기화 -->
+	<bean id="book" class="test.com.createbean.Book">
+		<property name="title" value="java"></property>
+		<property name="price" value="28000"></property>
+	</bean>
+
+	<!-- Store-Car,Book -->
+	<!-- Car car = new Car("BMW",5000); -->
+	<!-- Book book = new Book(); -->
+	<!-- book.setTitle("java"); -->
+	<!-- book.setPrice(28000); -->
+	<!-- Store store = new Store(car,book); -->
+
+	<bean id="store" class="test.com.createbean.Store">
+		<constructor-arg ref="car"></constructor-arg>
+		<constructor-arg ref="book"></constructor-arg>
+	</bean>
+
+	<!-- Store2 store02 = new Store2(); -->
+	<!-- store02.setCar(car); -->
+	<!-- strore02.setBook(book); -->
+	<bean id="store02" class="test.com.createbean.Store2">
+		<property name="car" ref="car"></property>
+		<property name="book" ref="book"></property>
+	</bean>
+
+	<!-- Bag-note(model,size),pen(color,price) - 생성자빈 -->
+	<!-- Bag2-note(model,size),pen(color,price) - 세터빈 -->
+
+	<!-- List names = new ArrayList(); -->
+	<!-- names.add("kim1"); -->
+	<!-- names.add("kim2"); -->
+	<!-- names.add("kim3"); -->
+	<!-- names.add("kim4"); -->
+	<!-- new TestBean4(names); -->
+	<bean id="tb04" class="test.com.createbean.TestBean4">
+		<constructor-arg>
+			<list>
+				<value>kim1</value>
+				<value>kim1</value>
+				<value>kim2</value>
+				<value>kim2</value>
+				<value>kim3</value>
+				<value>kim4</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="tb05" class="test.com.createbean.TestBean5">
+		<constructor-arg>
+			<set>
+				<value>kim1</value>
+				<value>kim1</value>
+				<value>kim2</value>
+				<value>kim2</value>
+				<value>kim3</value>
+				<value>kim4</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<bean id="tb06" class="test.com.createbean.TestBean6">
+		<constructor-arg>
+			<map>
+				<entry key="name">
+					<value>kim</value>
+				</entry>
+				<entry key="age">
+					<value>33</value>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="tb07" class="test.com.createbean.TestBean7">
+		<property name="list">
+			<list>
+				<value>kim1</value>
+				<value>kim1</value>
+				<value>kim2</value>
+				<value>kim2</value>
+				<value>kim3</value>
+				<value>kim4</value>
+			</list>
+		</property>
+		<property name="set">
+			<set>
+				<value>kim1</value>
+				<value>kim1</value>
+				<value>kim2</value>
+				<value>kim2</value>
+				<value>kim3</value>
+				<value>kim4</value>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="name">
+					<value>kim</value>
+				</entry>
+				<entry key="age">
+					<value>33</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- root-context.xml car,book,store -->
+	<!-- Car-model,price 생성자빈으로 초기화 -->
+	<bean id="car" class="test.com.member.Car">
+		<constructor-arg>
+			<value>BMW</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>5000</value>
+		</constructor-arg>
+	</bean>
+
+
+	<!-- Book-title,price 세터빈으로 초기화 -->
+	<bean id="book" class="test.com.member.Book">
+		<property name="title" value="java"></property>
+		<property name="price" value="28000"></property>
+	</bean>
+
+	<bean id="store" class="test.com.member.Store">
+		<constructor-arg ref="car"></constructor-arg>
+		<constructor-arg ref="book"></constructor-arg>
+	</bean>
+
+	<!-- @Configuration-MemberConfig.java pen,note,bag -->
+	<!-- logger확인은 @Repository-MemberDAOimpl.java : Bag,Store -->
+</beans>
