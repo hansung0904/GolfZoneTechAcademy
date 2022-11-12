@@ -1,0 +1,16 @@
+CREATE TABLE test 
+(
+  NUM NUMBER NOT NULL 
+, name VARCHAR2(30) NOT NULL 
+, age NUMBER NOT NULL
+, imgname VARCHAR2(30) default 'img_0001.png'
+, CONSTRAINT test_PK PRIMARY KEY 
+  (
+    NUM 
+  )
+  ENABLE 
+);
+
+drop table test;
+
+create sequence seq_test;

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.com.tiles">
+	<select id="SQL_SELECT_ALL"
+		resultType="test.com.tiles.TestVO">
+		select * from test order by num desc
+	</select>
+
+	<select id="SQL_SELECT_ONE"
+		resultType="test.com.tiles.TestVO">
+		select * from test where num=#{num}
+	</select>
+
+	<select id="SQL_SEARCH_LIST"
+		resultType="test.com.tiles.TestVO">
+		select * from test
+		<if test="searchKey == 'name'">
+			where name like #{searchWord} order by num desc
+		</if>
+		<if test="searchKey == 'age'">
+			where age = #{searchWord} order by num desc
+		</if>
+	</select>
+
+	<insert id="SQL_INSERT"
+		parameterType="test.com.tiles.TestVO">
+		insert into test(num,name,age,imgName)
+		values(seq_test.nextval,#{name},#{age},#{imgName})
+	</insert>
+
+	<update id="SQL_UPDATE"
+		parameterType="test.com.tiles.TestVO">
+		update test set name=#{name},age=#{age},imgname=#{imgName}
+		where num=#{num}
+	</update>
+
+	<delete id="SQL_DELETE"
+		parameterType="test.com.tiles.TestVO">
+		delete from test where num=#{num}
+	</delete>
+
+</mapper>

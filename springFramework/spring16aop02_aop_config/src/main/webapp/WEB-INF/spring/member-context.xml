@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<!-- [AOP설정 순서] -->
+	<!-- 1. target객체를 설정해주는 빈생성(핵심로직객체-AOP가 삽입될 객체:반드시 인터페이스 상속) -->
+	<!-- 2. Advice 설정주는 빈생성(언제+무슨 공통기능을 수행할 것인지) -->
+	<!-- 3. PointCut 설정(Advice가 적용될 지점- 어떤메소드에 공통기능을 수행할지) -->
+	<!-- 4. Advisor 설정(Advice + PointCut) -->
+	<!-- 5. ProxyFactoryBean 객체 설정(target + Advisor) -->
+
+	<!-- 1.target -->
+	<bean id="m_dao" class="test.com.aop01.MemberDAOimpl"></bean>
+
+	<!-- 2. Advice 설정 -->
+	<bean id="m_testMI" class="test.com.aop01.MemberMethodInterceptorImpl"></bean>
+
+	<!-- 3. PointCut 설정 -->
+	<!-- 4. Advisor 설정 -->
+	<!-- 5. ProxyFactoryBean 객체 설정 (target + Advisor) -->
+	<!-- pom.xml 추가 https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+	<!-- <dependency> -->
+	<!--     <groupId>org.aspectj</groupId> -->
+	<!--     <artifactId>aspectjweaver</artifactId> -->
+	<!--     <version>1.6.11</version> -->
+	<!--     <scope>runtime</scope> -->
+	<!-- </dependency> -->
+	
+	
+	<aop:config>
+		<aop:pointcut id="m_testPointCut"
+			expression="execution(public * test..*MemberDAO*.*(..))" />
+		<aop:advisor advice-ref="m_testMI"
+			pointcut-ref="m_testPointCut" />
+	</aop:config>
+
+
+
+
+</beans>

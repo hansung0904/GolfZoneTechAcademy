@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<!-- MedelAndView >> jsonView 키워드 설정. -->
+	<bean id="viewResolver" p:order="0" class="org.springframework.web.servlet.view.BeanNameViewResolver"></bean>
+	
+	<bean id="jsonView"  class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+		<property name="contentType" value="application/json;charset=UTF-8"></property>
+	</bean>
+
+</beans>

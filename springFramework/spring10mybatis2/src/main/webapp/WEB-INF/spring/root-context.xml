@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:jdbc/oracle.properties</value>
+		</property>
+	</bean>
+
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="${oracle.DRIVER_NAME}"></property>
+		<property name="url" value="${oracle.URL}"></property>
+		<property name="username" value="${oracle.USER}"></property>
+		<property name="password" value="${oracle.PASSWORD}"></property>
+	</bean>
+
+
+	<!-- Mapper사용하기 위해서는 commons-dbcp 기존 1.2.X를 사용하고 있다면 버전업이 필요하다 -->
+	<!-- 버전 낮으면 오류발생 : java.lang.IllegalAccessError: org.apache.commons.dbcp.DelegatingPreparedStatement.isClosed()Z -->
+	<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+	<!-- <dependency> -->
+	<!-- <groupId>commons-dbcp</groupId> -->
+	<!-- <artifactId>commons-dbcp</artifactId> -->
+	<!-- <version>1.4</version> -->
+	<!-- </dependency> -->
+	<bean id="sqlSessionFactoryBean"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"></property>
+		<property name="mapperLocations">
+			<value>classpath:jdbc/sqlMapper_member.xml</value>
+		</property>
+	</bean>
+
+
+	<!-- 필요없어짐 -->
+	<!-- <bean id="SqlSessionTemplate" -->
+	<!-- class="org.mybatis.spring.SqlSessionTemplate"> -->
+	<!-- <constructor-arg ref="sqlSessionFactoryBean"></constructor-arg> -->
+	<!-- </bean> -->
+
+	<!-- 필요없어짐 -->
+	<!-- <bean id="testMapper" -->
+	<!-- class="org.mybatis.spring.mapper.MapperFactoryBean"> -->
+	<!-- <property name="mapperInterface" -->
+	<!-- value="test.com.mapper.TestMapper" /> -->
+	<!-- <property name="sqlSessionFactory" -->
+	<!-- ref="sqlSessionFactoryBean" /> -->
+	<!-- </bean> -->
+
+	<!-- pom.xml 추가 및 수정 -->
+	<!-- org.springframework-version>>>>변경4.0.9.RELEASE -->
+	<!-- <properties> -->
+	<!-- <java-version>1.6</java-version> -->
+	<!-- <org.springframework-version>4.0.9.RELEASE</org.springframework-version> -->
+	<!-- <org.aspectj-version>1.6.10</org.aspectj-version> -->
+	<!-- <org.slf4j-version>1.6.6</org.slf4j-version> -->
+	<!-- </properties> -->
+
+	<!-- <dependency> -->
+	<!-- <groupId>org.mybatis</groupId> -->
+	<!-- <artifactId>mybatis-spring</artifactId> -->
+	<!-- <version>2.0.7</version> -->
+	<!-- </dependency> -->
+	<!-- https://juntcom.tistory.com/44 참조. -->
+	<mybatis-spring:scan base-package="test.com.mapper" />
+</beans>

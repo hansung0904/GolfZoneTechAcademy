@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+  <definition name=".insert" extends=".home">
+    <put-attribute name="title" value="INSERT PAGE" />
+    <put-attribute name="content" value="/WEB-INF/views/member/insert.jsp" />
+  </definition>
+  <definition name=".update" extends=".home">
+    <put-attribute name="title" value="UPDATE PAGE" />
+    <put-attribute name="content" value="/WEB-INF/views/member/update.jsp" />
+  </definition>
+  <definition name=".delete" extends=".home">
+    <put-attribute name="title" value="DELETE PAGE" />
+    <put-attribute name="content" value="/WEB-INF/views/member/delete.jsp" />
+  </definition>
+  <definition name=".selectOne" extends=".home">
+    <put-attribute name="title" value="SELECT ONE PAGE" />
+    <put-attribute name="content" value="/WEB-INF/views/member/selectOne.jsp" />
+  </definition>
+  <definition name=".selectAll" extends=".home">
+    <put-attribute name="title" value="SELECT ALL PAGE" />
+    <put-attribute name="content" value="/WEB-INF/views/member/selectAll.jsp" />
+  </definition>
+</tiles-definitions>

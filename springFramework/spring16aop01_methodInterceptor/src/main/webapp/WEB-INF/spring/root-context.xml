@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<!-- [AOP설정 순서] -->
+	<!-- 1. target객체를 설정해주는 빈생성(핵심로직객체-AOP가 삽입될 객체:반드시 인터페이스 상속) -->
+	<!-- 2. Advice 설정주는 빈생성(언제+무슨 공통기능을 수행할 것인지) -->
+	<!-- 3. PointCut 설정(Advice가 적용될 지점- 어떤메소드에 공통기능을 수행할지) -->
+	<!-- 4. Advisor 설정(Advice + PointCut) -->
+	<!-- 5. ProxyFactoryBean 객체 설정(target + Advisor) -->
+
+	<!-- 1.target -->
+	<bean id="dao" class="test.com.aop01.TestDAOimpl"></bean>
+
+	<!-- 2. Advice 설정 -->
+	<bean id="testMI" class="test.com.aop01.TestMethodInterceptorImpl"></bean>
+
+	<!-- 3. PointCut 설정 -->
+	<bean id="testPointCut"
+		class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+		<property name="patterns">
+			<list>
+<!-- 				<value>.*.*</value> -->
+<!-- 				<value>.*insert.*(..)</value> -->
+<!-- 				<value>.*insert.*(..)</value> -->
+<!-- 				<value>.*Test*.*insert.*(..)</value> -->
+<!-- 				<value>public Integer test..*Test*.*insert.*(..)</value> -->
+<!-- 				<value>* test..*Test*.*insert.*(..)</value> -->
+				<value>.*insert.*</value>
+				<value>.*update.*</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 4. Advisor 설정 -->
+	<bean id="testAdvisor"
+		class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="testMI"></property>
+		<property name="pointcut" ref="testPointCut"></property>
+	</bean>
+
+	<!-- 5. ProxyFactoryBean 객체 설정 (target + Advisor) -->
+	<bean id="proxyBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="dao"></property>
+		<property name="interceptorNames">
+			<list>
+				<value>testAdvisor</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
